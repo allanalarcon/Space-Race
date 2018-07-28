@@ -17,7 +17,7 @@ public class BGanimation : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        escala = 0.01f * Time.deltaTime;
+        escala = 0.03f * Time.deltaTime;
         if (x < maxScale)
         {
             x += escala;

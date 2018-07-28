@@ -2,25 +2,42 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(Rigidbody))]
+[RequireComponent(typeof(Rigidbody2D))]
 public class ShipMovement : MonoBehaviour {
-
-	Rigidbody rb;
+    
+	Rigidbody2D rb;
+    Animator anim;
+    Vector2 Mov;
 	public float Velocidad = 8f;
-	public float delay;
+    private float angle = 3f;
+    private int dir = 0;
 
 	void Start () {
-		rb = GetComponent<Rigidbody>();
+		rb = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		Vector3 DireccionX = Input.GetAxis ("Horizontal") * Vector3.right;
-		Vector3 DireccionZ = Input.GetAxis ("Vertical") * Vector3.forward;
-
-		Vector3 Direccion = DireccionX + DireccionZ;
-		Vector3 VectorVelocidad = Direccion * Velocidad;
-
-		rb.velocity = VectorVelocidad;
+        bool bup = Input.GetKey(KeyCode.UpArrow);
+        bool bdown = Input.GetKey(KeyCode.DownArrow);
+        Mov = new Vector2(Input.GetAxis("Horizontal"),
+                          Input.GetAxis("Vertical"));
+        anim.SetBool("disparando", Input.GetKey(KeyCode.Space));
+        if (bup) {
+            dir = 1;
+        } else if (bdown) {
+            dir = -1;
+        } else {
+            dir = 0;
+        }
 	}
+
+    void FixedUpdate() {        
+
+        rb.MovePosition(rb.position + Mov * Velocidad * Time.deltaTime);
+        rb.MoveRotation(angle*dir);
+    }
+    
+
 }
