@@ -5,10 +5,11 @@ using UnityEngine;
 public class BalaMovement : MonoBehaviour {
 
     public float velocidad = 20f;
+    public float timeLife = 4f;
 
     // Use this for initialization
     void Start() {
-        Destroy(gameObject, 4);
+        Destroy(gameObject, timeLife);
     }
 
     // Update is called once per frame
