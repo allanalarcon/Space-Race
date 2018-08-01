@@ -12,7 +12,7 @@ public class ShipMovement : MonoBehaviour {
     private float angle = 3f;
     private int dir = 0;
 
-	void Start () {
+    void Start () {
 		rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
 	}

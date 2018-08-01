@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MeteoroMovement : MonoBehaviour {
 
-	public float velocidad = 20f;
+	public float velocidad = 15f;
 	
 	// Use this for initialization
 	void Start () {		
