@@ -3,11 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class MeteoroScript : MonoBehaviour {
-
-	public Transform Tmeteoro;
-	public GameObject meteoro;
-    public Transform Tlluvia;
+	
+	public GameObject meteoro;    
     public GameObject lluvia;
+    public GameObject agujero;
 
 	// Use this for initialization
 	void Start () {
@@ -17,11 +16,15 @@ public class MeteoroScript : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (Input.GetKeyDown(KeyCode.Z)){
-			Instantiate(meteoro, Tmeteoro.position, meteoro.transform.rotation);
+			Instantiate(meteoro, new Vector3(Random.Range(20, 25), Random.Range(-7, 7), 0), meteoro.transform.rotation);
 		}
 
         if (Input.GetKeyDown(KeyCode.X)) {
-            Instantiate(lluvia, Tlluvia.position, lluvia.transform.rotation);
+            Instantiate(lluvia, new Vector3(Random.Range(0,15),Random.Range(8,11),0), lluvia.transform.rotation);
         }
-	}
+
+        if (Input.GetKeyDown(KeyCode.C)) {
+            Instantiate(agujero, new Vector3(Random.Range(20, 25), Random.Range(-4, 4), 0), agujero.transform.rotation);
+        }
+    }
 }
