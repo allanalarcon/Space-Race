@@ -16,4 +16,12 @@ public class BalaMovement : MonoBehaviour {
     void Update() {
         transform.position += transform.up * velocidad * Time.deltaTime;
     }
+
+
+    private void OnCollisionEnter2D(Collision2D collision) {
+        if (collision.collider.CompareTag("Obstaculo")) {
+            Destroy(gameObject);
+        }
+    }
+
 }
