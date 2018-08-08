@@ -8,6 +8,9 @@ public class ObstaclesGenerator : MonoBehaviour {
     public GameObject lluvia;
     public GameObject agujero;
     public GameObject robot;
+    public GameObject roca;
+    public GameObject satelite1;
+    public GameObject satelite2;
 
 	// Use this for initialization
 	void Start () {
@@ -16,6 +19,7 @@ public class ObstaclesGenerator : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        
 		if (Input.GetKeyDown(KeyCode.Z)){
 			Instantiate(meteoro, new Vector3(Random.Range(20, 25), Random.Range(-7, 7), 0), meteoro.transform.rotation);
 		}
@@ -29,7 +33,19 @@ public class ObstaclesGenerator : MonoBehaviour {
         }
 
         if (Input.GetKeyDown(KeyCode.V)) {
-            Instantiate(robot, new Vector3(Random.Range(20, 25), Random.Range(-7, 7), 0), meteoro.transform.rotation);
+            Instantiate(robot, new Vector3(Random.Range(20, 25), Random.Range(-7, 7), 0), robot.transform.rotation);
+        }
+
+        if (Input.GetKeyDown(KeyCode.A)) {
+            Instantiate(roca, new Vector3(Random.Range(20, 25), Random.Range(-7, 7), 0), roca.transform.rotation);
+        }
+
+        if (Input.GetKeyDown(KeyCode.S)) {
+            Instantiate(satelite1, new Vector3(Random.Range(20, 25), Random.Range(-7, 7), 0), satelite1.transform.rotation);
+        }
+
+        if (Input.GetKeyDown(KeyCode.D)) {
+            Instantiate(satelite2, new Vector3(Random.Range(20, 25), Random.Range(-7, 7), 0), satelite2.transform.rotation);
         }
     }
 }

@@ -6,12 +6,16 @@ public class Destroyable : MonoBehaviour {
 
     public string destroyState;
     public float timeForDisable;
+    public bool player = false;
+    private int impactos = 0;
 
     Animator anim;
+    AudioSource sound;
 
 	// Use this for initialization
 	void Start () {
         anim = GetComponent<Animator>();
+        sound = GetComponent<AudioSource>();
 	}
 	
 	// Update is called once per frame
@@ -25,8 +29,18 @@ public class Destroyable : MonoBehaviour {
 
 
     IEnumerator OnCollisionEnter2D(Collision2D collision) {
-        if (collision.collider.CompareTag("Disparo") || collision.collider.CompareTag("Player")) {
+        bool destruir = false;
+        if (player) {            
+            if (collision.collider.CompareTag("Obstaculo")) {
+                impactos++;
+            }
+            destruir = impactos == 3;
+        } else {
+            destruir = collision.collider.CompareTag("Disparo") || collision.collider.CompareTag("Player");
+        }
+        if (destruir) {
             anim.Play(destroyState);
+            sound.Play();
 
             yield return new WaitForSeconds(timeForDisable);
             

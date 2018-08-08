@@ -20,13 +20,14 @@ public class ObstaclesMovement : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         rb.velocity = Vector3.right * -velocidad;
-        //transform.position -= transform.right * velocidad * Time.deltaTime;
-        //transform.Rotate(Vector3.forward, rotacion);
     }
 
     void OnCollisionEnter2D(Collision2D other) {
         if (other.collider.CompareTag("Finish")) {
             Destroy(gameObject);
+        } else if (other.collider.CompareTag("Player")) {
+            GetComponent<Collider2D>().enabled = false;
         }
     }
+    
 }

@@ -492,7 +492,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocidad: 13
-  rotacion: 20
+  rotacion: 27
   timeLife: 4
 --- !u!212 &212010933365726028
 SpriteRenderer:
