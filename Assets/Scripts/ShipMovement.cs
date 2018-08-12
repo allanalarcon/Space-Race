@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -54,7 +54,7 @@ public class ShipMovement : MonoBehaviour {
             impactos++;
             if (impactos == 2) {
                 activarHumo();
-                rb.gravityScale = 3f;
+                rb.gravityScale = 7f;
             }
             if (impactos < 3) {
                 animState.Play("impacto");
