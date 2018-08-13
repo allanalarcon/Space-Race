@@ -69,6 +69,7 @@
     <Compile Include="Assets\Scripts\ObstaclesGenerator.cs" />
     <Compile Include="Assets\Scripts\ObstaclesMovement.cs" />
     <Compile Include="Assets\Scripts\ParedScript.cs" />
+    <Compile Include="Assets\Scripts\Player.cs" />
     <Compile Include="Assets\Scripts\SceneController.cs" />
     <Compile Include="Assets\Scripts\ShipMovement.cs" />
     <Reference Include="UnityEditor.StandardEvents">

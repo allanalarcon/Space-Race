@@ -24,7 +24,7 @@ MonoBehaviour:
   m_MinSize: {x: 713, y: 492}
   m_MaxSize: {x: 18008, y: 14042}
   vertical: 0
-  controlID: 15610
+  controlID: 15855
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -127,7 +127,7 @@ MonoBehaviour:
   m_MinSize: {x: 202, y: 442}
   m_MaxSize: {x: 4002, y: 8042}
   vertical: 1
-  controlID: 15344
+  controlID: 15838
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -332,10 +332,10 @@ MonoBehaviour:
       e32: 0
       e33: 1
   m_PreviewAnimator: {fileID: 0}
-  m_AnimatorController: {fileID: 9100000, guid: 8e3783a16a3da2d428987beca015058f,
+  m_AnimatorController: {fileID: 9100000, guid: be07a31a8429bf04bb11bd6ef3ef693b,
     type: 2}
   m_BreadCrumbs:
-  - m_Target: {fileID: 1107113830596576014, guid: 8e3783a16a3da2d428987beca015058f,
+  - m_Target: {fileID: 1107723114804559828, guid: be07a31a8429bf04bb11bd6ef3ef693b,
       type: 2}
     m_ScrollPosition: {x: 0, y: 0}
   stateMachineGraph: {fileID: 0}
@@ -447,7 +447,7 @@ MonoBehaviour:
   m_MinSize: {x: 234, y: 492}
   m_MaxSize: {x: 10004, y: 14042}
   vertical: 1
-  controlID: 15611
+  controlID: 15856
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -466,8 +466,8 @@ MonoBehaviour:
     y: 0
     width: 351
     height: 397
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 204, y: 221}
+  m_MaxSize: {x: 4004, y: 4021}
   m_ActualView: {fileID: 12}
   m_Panes:
   - {fileID: 12}
@@ -500,7 +500,7 @@ MonoBehaviour:
   m_PersistentViewDataDictionary: {fileID: 0}
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 309faeff
+    m_SelectedIDs: 660c0000
     m_LastClickedID: 0
     m_ExpandedIDs: d867abff8cd9abffe660acffee61acff3e63acff5263acff7663acffbab9acff8ebaacffcebbacffd2bbacffe6bbacffb20eafff880fafffc810afffcc10afffe010affff626eafffe26eaffe4fbffffe6fbffff00000000540d0000a40d0000
     m_RenameOverlay:
@@ -544,8 +544,8 @@ MonoBehaviour:
     y: 397
     width: 351
     height: 278
-  m_MinSize: {x: 234, y: 271}
-  m_MaxSize: {x: 10004, y: 10021}
+  m_MinSize: {x: 230, y: 250}
+  m_MaxSize: {x: 10000, y: 10000}
   m_ActualView: {fileID: 14}
   m_Panes:
   - {fileID: 14}
@@ -588,11 +588,11 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Animations
+    - Assets/Prefabs
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Animations
+  - Assets/Prefabs
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\dario\Documents\DARIO\Universidad\2018 IT\Desarrollo
     de juegos de video\Proyecto\Space-Race
@@ -600,8 +600,8 @@ MonoBehaviour:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 20}
-    m_SelectedIDs: b6090000
-    m_LastClickedID: 2486
+    m_SelectedIDs: 0c0a0000
+    m_LastClickedID: 2572
     m_ExpandedIDs: 00000000640900001c0a0000fa2e00002c4500002e45000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -655,8 +655,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 309faeff
-    m_LastClickedInstanceID: -5333200
+    m_SelectedInstanceIDs: 660c0000
+    m_LastClickedInstanceID: 3174
     m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: 00000000142c00004e0b0000
     m_RenameOverlay:
@@ -682,7 +682,7 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
     m_NewAssetIndexInList: -1
-    m_ScrollPosition: {x: 0, y: 452}
+    m_ScrollPosition: {x: 0, y: 275}
     m_GridSize: 64
   m_DirectoriesAreaWidth: 144
 --- !u!114 &15

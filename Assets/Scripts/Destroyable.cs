@@ -32,9 +32,9 @@ public class Destroyable : MonoBehaviour {
         bool destruir = false;
         if (player) {            
             if (collision.collider.CompareTag("Obstaculo")) {
-                impactos++;
+                GetComponent<Player>().impact();
             }
-            destruir = impactos == 3;
+            destruir = !GetComponent<Player>().isAlive();
         } else {
             destruir = collision.collider.CompareTag("Disparo") || collision.collider.CompareTag("Player");
         }
@@ -48,5 +48,9 @@ public class Destroyable : MonoBehaviour {
                 col.enabled = false;
             }
         }
+    }
+
+    public int getImpactos() {
+        return impactos;
     }
 }
