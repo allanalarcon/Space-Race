@@ -20,12 +20,12 @@ GameObject:
   m_Component:
   - component: {fileID: 4775491222745080}
   - component: {fileID: 212512124028460672}
-  - component: {fileID: 95069286780813948}
   - component: {fileID: 114591595321897132}
   - component: {fileID: 50441633038304854}
   - component: {fileID: 114706112101527644}
   - component: {fileID: 58834977026386384}
   - component: {fileID: 82933439725380152}
+  - component: {fileID: 95599177278336352}
   m_Layer: 0
   m_Name: Roca
   m_TagString: Obstaculo
@@ -176,7 +176,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!95 &95069286780813948
+--- !u!95 &95599177278336352
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 1
@@ -185,7 +185,7 @@ Animator:
   m_GameObject: {fileID: 1961969519763570}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 6325cd485b7ea7344820f40c9e10a962, type: 2}
+  m_Controller: {fileID: 9100000, guid: 8e3783a16a3da2d428987beca015058f, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
