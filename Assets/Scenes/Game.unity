@@ -305,11 +305,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4649263493797562, guid: aa8821fcf62ff264d8faa9c85e668e89, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -9.78
+      value: -11.06
       objectReference: {fileID: 0}
     - target: {fileID: 4649263493797562, guid: aa8821fcf62ff264d8faa9c85e668e89, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0.2
+      value: -1.5
       objectReference: {fileID: 0}
     - target: {fileID: 4649263493797562, guid: aa8821fcf62ff264d8faa9c85e668e89, type: 2}
       propertyPath: m_LocalPosition.z
@@ -334,6 +334,11 @@ Prefab:
     - target: {fileID: 4649263493797562, guid: aa8821fcf62ff264d8faa9c85e668e89, type: 2}
       propertyPath: m_RootOrder
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114322299239872638, guid: aa8821fcf62ff264d8faa9c85e668e89,
+        type: 2}
+      propertyPath: maxLimit.y
+      value: 3.9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aa8821fcf62ff264d8faa9c85e668e89, type: 2}
@@ -5351,6 +5356,7 @@ MonoBehaviour:
   roca: {fileID: 1961969519763570, guid: ab39425e28ec4ae4199baea8624b8e65, type: 2}
   satelite1: {fileID: 1307360495012964, guid: 4a4261cdcbbb8a94fae74851768341de, type: 2}
   satelite2: {fileID: 1348121677300776, guid: 23fd092953f15da49a86886ac4f91cbd, type: 2}
+  yRange: {x: -7, y: 3.8}
 --- !u!4 &1225023516
 Transform:
   m_ObjectHideFlags: 0

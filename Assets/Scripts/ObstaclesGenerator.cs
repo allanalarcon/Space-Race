@@ -13,6 +13,7 @@ public class ObstaclesGenerator : MonoBehaviour {
     public GameObject roca;
     public GameObject satelite1;
     public GameObject satelite2;
+    public Vector2 yRange;
 
 
 	// Update is called once per frame
@@ -53,7 +54,7 @@ public class ObstaclesGenerator : MonoBehaviour {
 
             for (int i=0; i<instanceAmount; i++) {
                 GameObject ob = obstaculos[Random.Range(0, 5)];
-                Instantiate(ob, new Vector3(Random.Range(20, 25), Random.Range(-7, 7), 0), ob.transform.rotation);
+                Instantiate(ob, new Vector3(Random.Range(20, 25), Random.Range(yRange.x, yRange.y), 0), ob.transform.rotation);
             }            
 
             yield return new WaitForSeconds(instanceRate);
