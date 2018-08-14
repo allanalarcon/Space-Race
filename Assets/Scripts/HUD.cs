@@ -6,6 +6,7 @@ public class HUD : MonoBehaviour {
 
     Animator vida;
     Animator escudo;
+    UnityEngine.UI.Text score;
     public GameObject nave;
     Player player;
 
@@ -13,12 +14,14 @@ public class HUD : MonoBehaviour {
 	void Start () {
         vida = transform.GetChild(1).GetComponent<Animator>();
         escudo = transform.GetChild(2).GetComponent<Animator>();
-        player = nave.GetComponent<Player>();
+        score = transform.GetChild(3).GetComponent<UnityEngine.UI.Text>();
+        player = nave.GetComponent<Player>();        
     }
 	
 	// Update is called once per frame
 	void Update () {
         vida.SetInteger("lifes", player.getLifes());
         escudo.SetInteger("ShieldPower", player.getShieldPower());
+        score.text = ""+(int)player.getScore();
 	}
 }
