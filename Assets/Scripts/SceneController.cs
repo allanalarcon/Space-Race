@@ -13,4 +13,12 @@ public class SceneController : MonoBehaviour {
 		Application.Quit();
 	}
 
+    public void saveScore() {
+        transform.GetChild(2).gameObject.SetActive(false);
+        transform.GetChild(1).gameObject.SetActive(true);
+
+        //Guardar en archivo
+    }
+
+
 }
