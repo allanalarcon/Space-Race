@@ -1,20 +1,19 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour {
 
-    private float score = 0f; // tiempo en segundos
+    public static float score = 0f; // tiempo en segundos
     private int life = 3;
     private int shieldPower = 0;
     //Destroyable nave;
-
-    private ObstaclesGenerator gameController;
+    
 
     // Use this for initialization
     void Start() {
-        GameObject gameControllerObject = GameObject.FindWithTag("ObstaclesGenerator");
-        gameController = gameControllerObject.GetComponent<ObstaclesGenerator>();
+        
     }
 
     // Update is called once per frame
@@ -23,9 +22,11 @@ public class Player : MonoBehaviour {
             score += Time.deltaTime;
         } else {
             // presentar game over
-            gameController.GameOver();
-
+            InfoPlayer.score = score;          
             print("Score: " + score);
+            SceneManager.LoadScene("GameOver");
+
+            
         }
     }
 

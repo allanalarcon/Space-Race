@@ -410,11 +410,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 114322299239872638, guid: aa8821fcf62ff264d8faa9c85e668e89,
-        type: 2}
-      propertyPath: maxLimit.y
-      value: 3.9
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aa8821fcf62ff264d8faa9c85e668e89, type: 2}
   m_IsPrefabAsset: 0
@@ -723,7 +718,7 @@ Canvas:
   serializedVersion: 3
   m_RenderMode: 1
   m_Camera: {fileID: 519420031}
-  m_PlaneDistance: 1
+  m_PlaneDistance: 10
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
@@ -5629,7 +5624,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   instanceRate: 2
-  instanceAmount: 3
+  instanceAmount: 4
+  instanceDelay: 0.5
   meteoro: {fileID: 1672716196481558, guid: 7203df6e9d34563429299d8d3b0c1ac2, type: 2}
   lluvia: {fileID: 1266995769492128, guid: 39a416595999af04a8868512b16ff79e, type: 2}
   agujero: {fileID: 1925968364943834, guid: d61775e2599f447438b4636b69c902d3, type: 2}
@@ -5638,10 +5634,6 @@ MonoBehaviour:
   satelite1: {fileID: 1307360495012964, guid: 4a4261cdcbbb8a94fae74851768341de, type: 2}
   satelite2: {fileID: 1348121677300776, guid: 23fd092953f15da49a86886ac4f91cbd, type: 2}
   yRange: {x: -7, y: 3.8}
-  restartText: {fileID: 0}
-  gameOverText: {fileID: 0}
-  nombreInput: {fileID: 0}
-  botonGuardar: {fileID: 0}
 --- !u!4 &1225023516
 Transform:
   m_ObjectHideFlags: 0
