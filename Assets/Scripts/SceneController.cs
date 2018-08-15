@@ -18,6 +18,7 @@ public class SceneController : MonoBehaviour {
         transform.GetChild(1).gameObject.SetActive(true);
 
         //Guardar en archivo
+        InfoPlayer.setScore(0f);
     }
 
 
