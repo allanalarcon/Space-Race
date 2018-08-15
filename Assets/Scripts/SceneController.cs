@@ -19,6 +19,7 @@ public class SceneController : MonoBehaviour {
 
         //Guardar en archivo
         InfoPlayer.setScore(0f);
+        Player.score = 0f;
     }
 
 
