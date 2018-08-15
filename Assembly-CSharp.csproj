@@ -67,6 +67,7 @@
     <Compile Include="Assets\Scripts\CamController.cs" />
     <Compile Include="Assets\Scripts\Destroyable.cs" />
     <Compile Include="Assets\Scripts\HUD.cs" />
+    <Compile Include="Assets\Scripts\mouseOver.cs" />
     <Compile Include="Assets\Scripts\ObstaclesGenerator.cs" />
     <Compile Include="Assets\Scripts\ObstaclesMovement.cs" />
     <Compile Include="Assets\Scripts\ParedScript.cs" />
