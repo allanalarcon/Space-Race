@@ -16,7 +16,7 @@ public class BGanimation : MonoBehaviour {
 		tr = GetComponent<Transform>();
         x = tr.localScale.x;
         y = tr.localScale.y;
-        z = tr.localScale.z;
+        z = tr.localScale.z;        
 	}
 	
 	// Update is called once per frame

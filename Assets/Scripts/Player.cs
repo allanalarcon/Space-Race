@@ -21,10 +21,8 @@ public class Player : MonoBehaviour {
             score += Time.deltaTime;
         } else {
             // presentar game over
-            InfoPlayer.score = score;          
-            print("Score: " + score);
-            SceneManager.LoadScene("GameOver");
-
+            InfoPlayer.score = score;
+            SceneManager.LoadScene("GameOver");            
             
         }
     }

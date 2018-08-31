@@ -54,7 +54,7 @@ public class ShipMovement : MonoBehaviour {
             impactos++;
             if (impactos == 2) {
                 activarHumo();
-                rb.gravityScale = 7f;
+                rb.gravityScale = 15f;
             }
             if (impactos < 3) {
                 animState.Play("impacto");

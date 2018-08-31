@@ -462,7 +462,7 @@ GameObject:
   - component: {fileID: 347351984}
   - component: {fileID: 347351983}
   m_Layer: 5
-  m_Name: InputField
+  m_Name: Name
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -833,10 +833,10 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1690142757}
         m_MethodName: saveScore
-        m_Mode: 1
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 347351983}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.InputField, UnityEngine.UI
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 

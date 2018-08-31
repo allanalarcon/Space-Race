@@ -64,6 +64,7 @@
     <Compile Include="Assets\Scripts\ArmaScript.cs" />
     <Compile Include="Assets\Scripts\BalaMovement.cs" />
     <Compile Include="Assets\Scripts\BGanimation.cs" />
+    <Compile Include="Assets\Scripts\BGScroller.cs" />
     <Compile Include="Assets\Scripts\CamController.cs" />
     <Compile Include="Assets\Scripts\Destroyable.cs" />
     <Compile Include="Assets\Scripts\HUD.cs" />
