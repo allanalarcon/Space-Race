@@ -9,6 +9,8 @@ public class Destroyable : MonoBehaviour {
     public bool player = false;
     private int impactos = 0;
 
+    public static int kills = 0;
+
     Animator anim;
     AudioSource sound;
 
@@ -41,9 +43,9 @@ public class Destroyable : MonoBehaviour {
         if (destruir) {
             anim.Play(destroyState);
             sound.Play();
-
+            kills++;
             yield return new WaitForSeconds(timeForDisable);
-            
+
             foreach (Collider2D col in GetComponents<Collider2D>()) {
                 col.enabled = false;
             }

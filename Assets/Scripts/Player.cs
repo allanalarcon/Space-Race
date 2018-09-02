@@ -18,12 +18,18 @@ public class Player : MonoBehaviour {
     // Update is called once per frame
     void Update() {
         if (isAlive()) {
-            score += Time.deltaTime;
+            if (InfoPlayer.getMode() == 3){
+                score += Time.deltaTime;
+            }
+            else if (InfoPlayer.getMode() == 2){
+                score = Destroyable.kills;
+            }
         } else {
             // presentar game over
             InfoPlayer.score = score;
-            SceneManager.LoadScene("GameOver");            
-            
+            score = 0;
+            Destroyable.kills = 0;
+            SceneManager.LoadScene("GameOver");
         }
     }
 

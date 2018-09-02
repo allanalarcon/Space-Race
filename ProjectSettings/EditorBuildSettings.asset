@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/GameOver.unity
     guid: dd20eac8f110a5644bdd135890b183ff
+  - enabled: 1
+    path: Assets/Scenes/Disparar.unity
+    guid: e8f2377da6f1b894e81f8bca48409c4c
   m_configObjects: {}
