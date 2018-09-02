@@ -9,11 +9,11 @@ public class SceneController : MonoBehaviour {
         if (escena == "Over"){
             SceneManager.LoadScene("Game");
         }
-        else if (escena == "Game"){
+        else if (escena == "Survival"){
             InfoPlayer.setMode(3);
             SceneManager.LoadScene("Game");
         }
-        else if (escena == "Disparar"){
+        else if (escena == "Shooter"){
             InfoPlayer.setMode(2);
             SceneManager.LoadScene("Game");
         }

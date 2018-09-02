@@ -15,11 +15,35 @@ public class ObstaclesGenerator : MonoBehaviour {
     public GameObject roca;
     public GameObject satelite1;
     public GameObject satelite2;
+    public GameObject panel;
     public Vector2 yRange;
 
 
     void Start() {
+        Time.timeScale = 1;
         StartCoroutine(Meteoros());
+    }
+
+    void Update () {
+        if(Input.GetKeyDown("p")){
+            if(Time.timeScale == 1){    //si la velocidad es 1
+                Time.timeScale = 0;    //que la velocidad del juego sea 0
+                panel.SetActive(true);
+            } else if(Time.timeScale == 0) {   // si la velocidad es 0
+                panel.SetActive(false);
+                Time.timeScale = 1;    // que la velocidad del juego regrese a 1
+            }
+        }
+    }
+
+    public void pausar(){
+        if(Time.timeScale == 1){    //si la velocidad es 1
+            Time.timeScale = 0;    //que la velocidad del juego sea 0
+            panel.SetActive(true);
+        } else if(Time.timeScale == 0) {   // si la velocidad es 0
+            panel.SetActive(false);
+            Time.timeScale = 1;    // que la velocidad del juego regrese a 1
+        }
     }
 
     IEnumerator Meteoros() {
