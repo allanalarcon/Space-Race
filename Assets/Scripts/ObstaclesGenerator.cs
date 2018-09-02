@@ -36,4 +36,20 @@ public class ObstaclesGenerator : MonoBehaviour {
 
         }
     }
+
+    public int getScoreTime(){
+        return PlayerPrefs.GetInt("MaxTime", 0);
+    }
+
+    public void saveScoreTime(int actual){
+        PlayerPrefs.SetInt("MaxTime", actual);
+    }
+
+    public int getScoreShoot(){
+        return PlayerPrefs.GetInt("MaxShoot", 0);
+    }
+
+    public void saveScoreShoot(int actual){
+        PlayerPrefs.SetInt("MaxShoot", actual);
+    }
 }
