@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class ObstaclesGenerator : MonoBehaviour {
 
     public float instanceRate = 2f;
-    public int instanceAmount = 4;
+    public int instanceAmount = 8;
     public float instanceDelay = 0.5f;
     public GameObject meteoro;
     public GameObject lluvia;
@@ -43,12 +43,12 @@ public class ObstaclesGenerator : MonoBehaviour {
     }
 
     IEnumerator Meteoros() {
-        GameObject[] obstaculos = { meteoro, robot, roca, satelite1, satelite2 };
+        GameObject[] obstaculos = { meteoro,  roca , roca, meteoro,satelite1, roca, meteoro, meteoro};
         while (true) {
 
             for (int i = 0; i < instanceAmount; i++) {
                 yield return new WaitForSeconds(instanceDelay);
-                GameObject ob = obstaculos[Random.Range(0, 4)];
+                GameObject ob = obstaculos[Random.Range(0, 8)];
                 Instantiate(ob, new Vector3(Random.Range(20, 25), Random.Range(yRange.x, yRange.y), 0), ob.transform.rotation);
             }
 

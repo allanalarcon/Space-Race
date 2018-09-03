@@ -510,7 +510,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 694440784}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b66f31ff70cfe4f43af3b1a7ea21bae3, type: 3}
   m_Name: 
@@ -615,16 +615,31 @@ Prefab:
     - target: {fileID: 114889266690103088, guid: 3326126052aad4749bea630c6e057b93,
         type: 2}
       propertyPath: minLimit.x
-      value: -11
+      value: -9.7
       objectReference: {fileID: 0}
     - target: {fileID: 114889266690103088, guid: 3326126052aad4749bea630c6e057b93,
         type: 2}
       propertyPath: maxLimit.x
-      value: 11
+      value: 10.7
       objectReference: {fileID: 0}
     - target: {fileID: 4271410715407860, guid: 3326126052aad4749bea630c6e057b93, type: 2}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 181
+      objectReference: {fileID: 0}
+    - target: {fileID: 50248831399851074, guid: 3326126052aad4749bea630c6e057b93,
+        type: 2}
+      propertyPath: m_Constraints
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114889266690103088, guid: 3326126052aad4749bea630c6e057b93,
+        type: 2}
+      propertyPath: minLimit.y
+      value: -7
+      objectReference: {fileID: 0}
+    - target: {fileID: 114889266690103088, guid: 3326126052aad4749bea630c6e057b93,
+        type: 2}
+      propertyPath: maxLimit.y
+      value: 3.9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3326126052aad4749bea630c6e057b93, type: 2}
@@ -1371,7 +1386,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 13.55
+      scalar: 27
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -1424,7 +1439,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 2
+      scalar: 1
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -2065,7 +2080,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 20
+      scalar: 10
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -5951,7 +5966,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   instanceRate: 1
-  instanceAmount: 4
+  instanceAmount: 8
   instanceDelay: 0.3
   meteoro: {fileID: 1672716196481558, guid: 7203df6e9d34563429299d8d3b0c1ac2, type: 2}
   lluvia: {fileID: 1266995769492128, guid: 39a416595999af04a8868512b16ff79e, type: 2}
@@ -6311,6 +6326,24 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1237203157962194, guid: 3326126052aad4749bea630c6e057b93,
     type: 2}
   m_PrefabInternal: {fileID: 878344310}
+--- !u!95 &1318029523
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1318029514}
+  m_Enabled: 0
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: be07a31a8429bf04bb11bd6ef3ef693b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1559803748
 GameObject:
   m_ObjectHideFlags: 0
@@ -6994,7 +7027,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 6.63
+      scalar: 15
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -7047,7 +7080,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 4
+      scalar: 2
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -7688,7 +7721,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 20
+      scalar: 10
       minScalar: 10
       maxCurve:
         serializedVersion: 2

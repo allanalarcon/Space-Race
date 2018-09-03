@@ -403,7 +403,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 694440784}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b66f31ff70cfe4f43af3b1a7ea21bae3, type: 3}
   m_Name: 
@@ -579,6 +579,16 @@ Prefab:
     - target: {fileID: 4649263493797562, guid: aa8821fcf62ff264d8faa9c85e668e89, type: 2}
       propertyPath: m_RootOrder
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114322299239872638, guid: aa8821fcf62ff264d8faa9c85e668e89,
+        type: 2}
+      propertyPath: minLimit.x
+      value: -11.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114322299239872638, guid: aa8821fcf62ff264d8faa9c85e668e89,
+        type: 2}
+      propertyPath: maxLimit.x
+      value: 12.2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aa8821fcf62ff264d8faa9c85e668e89, type: 2}
@@ -1444,7 +1454,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 13.55
+      scalar: 27
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -1497,7 +1507,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 2
+      scalar: 1
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -2138,7 +2148,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 20
+      scalar: 10
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -6058,7 +6068,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   instanceRate: 1
-  instanceAmount: 4
+  instanceAmount: 8
   instanceDelay: 0.3
   meteoro: {fileID: 1672716196481558, guid: 7203df6e9d34563429299d8d3b0c1ac2, type: 2}
   lluvia: {fileID: 1266995769492128, guid: 39a416595999af04a8868512b16ff79e, type: 2}
@@ -6068,7 +6078,7 @@ MonoBehaviour:
   satelite1: {fileID: 1307360495012964, guid: 4a4261cdcbbb8a94fae74851768341de, type: 2}
   satelite2: {fileID: 1348121677300776, guid: 23fd092953f15da49a86886ac4f91cbd, type: 2}
   panel: {fileID: 66691873}
-  yRange: {x: -7, y: 3.8}
+  yRange: {x: -7, y: 3.5}
 --- !u!4 &1225023516
 Transform:
   m_ObjectHideFlags: 0
@@ -6998,7 +7008,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 6.63
+      scalar: 15
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -7051,7 +7061,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 4
+      scalar: 2
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -7168,7 +7178,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 3
       scalar: 0.25
-      minScalar: 0.5
+      minScalar: 0.4
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -7692,7 +7702,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 20
+      scalar: 10
       minScalar: 10
       maxCurve:
         serializedVersion: 2

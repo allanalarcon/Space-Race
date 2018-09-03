@@ -29,4 +29,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/LevelUp.unity
     guid: 7f81bfbb1fb5e9645afe78e30f2b8886
+  - enabled: 1
+    path: Assets/Scenes/Introduction.unity
+    guid: a826870650b436249bdab73b41efe663
   m_configObjects: {}
