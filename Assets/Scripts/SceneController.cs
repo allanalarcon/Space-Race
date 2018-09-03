@@ -6,8 +6,8 @@ using UnityEngine.SceneManagement;
 public class SceneController : MonoBehaviour {
 
 	public void cambiarEscena(string escena){
-        if (escena == "Over"){
-            SceneManager.LoadScene("Game");
+        if (escena == "Again"){
+            SceneManager.LoadScene(InfoPlayer.getMode()==1? "Story":"Game");
         }
         else if (escena == "Survival"){
             InfoPlayer.setMode(3);
@@ -19,7 +19,7 @@ public class SceneController : MonoBehaviour {
         }
         else if (escena == "Story"){
             InfoPlayer.setMode(1);
-            SceneManager.LoadScene("Game");
+            SceneManager.LoadScene("Story");
         }
 		else {
             SceneManager.LoadScene(escena);

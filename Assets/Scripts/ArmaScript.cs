@@ -14,7 +14,7 @@ public class ArmaScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (Input.GetKeyDown(KeyCode.Space)) {
+        if (Input.GetKeyDown(KeyCode.Space) && InfoPlayer.getMode()!=3) {
             Instantiate(bala, Tarma.position, bala.transform.rotation);
         }
     }

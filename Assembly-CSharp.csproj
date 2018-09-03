@@ -65,11 +65,13 @@
     <Compile Include="Assets\Scripts\BalaMovement.cs" />
     <Compile Include="Assets\Scripts\BGanimation.cs" />
     <Compile Include="Assets\Scripts\BGScroller.cs" />
+    <Compile Include="Assets\Scripts\BlackHole.cs" />
     <Compile Include="Assets\Scripts\CamController.cs" />
     <Compile Include="Assets\Scripts\Destroyable.cs" />
     <Compile Include="Assets\Scripts\HUD.cs" />
     <Compile Include="Assets\Scripts\InfoPlayer.cs" />
     <Compile Include="Assets\Scripts\mouseOver.cs" />
+    <Compile Include="Assets\Scripts\Nodriza.cs" />
     <Compile Include="Assets\Scripts\ObstaclesGenerator.cs" />
     <Compile Include="Assets\Scripts\ObstaclesMovement.cs" />
     <Compile Include="Assets\Scripts\ParedScript.cs" />

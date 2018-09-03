@@ -26,13 +26,9 @@ public class ObstaclesGenerator : MonoBehaviour {
 
     void Update () {
         if(Input.GetKeyDown("p")){
-            if(Time.timeScale == 1){    //si la velocidad es 1
-                Time.timeScale = 0;    //que la velocidad del juego sea 0
-                panel.SetActive(true);
-            } else if(Time.timeScale == 0) {   // si la velocidad es 0
-                panel.SetActive(false);
-                Time.timeScale = 1;    // que la velocidad del juego regrese a 1
-            }
+            pausar();
+        }else if (Input.GetKeyDown("x")) {
+            Instantiate(agujero, new Vector3(Random.Range(20, 25), Random.Range(yRange.x+3, yRange.y-3), 0), agujero.transform.rotation);
         }
     }
 

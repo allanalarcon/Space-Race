@@ -26,7 +26,7 @@ public class ShipMovement : MonoBehaviour {
 	void Update () {
         bool bup = Input.GetKey(KeyCode.UpArrow);
         bool bdown = Input.GetKey(KeyCode.DownArrow);
-        bool dispara = Input.GetKeyDown(KeyCode.Space);
+        bool dispara = Input.GetKeyDown(KeyCode.Space) && InfoPlayer.getMode()!=3;
         Mov = new Vector2(Input.GetAxis("Horizontal"),
                           Input.GetAxis("Vertical"));
         anim.SetBool("disparando", dispara);

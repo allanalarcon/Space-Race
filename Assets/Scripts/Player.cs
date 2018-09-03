@@ -5,10 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour {
 
-    public static float score = 0f; // tiempo en segundos
+    public static float score = 0f;
     private int life = 3;
-    private int shieldPower = 0;
-    //Destroyable nave;
+    private int shieldPower = 0;    
     
 
     // Use this for initialization
@@ -18,7 +17,7 @@ public class Player : MonoBehaviour {
     // Update is called once per frame
     void Update() {
         if (isAlive()) {
-            if (InfoPlayer.getMode() == 3){
+            if (InfoPlayer.getMode() == 3 || InfoPlayer.getMode() == 1) {
                 score += Time.deltaTime;
             }
             else if (InfoPlayer.getMode() == 2){
@@ -31,6 +30,16 @@ public class Player : MonoBehaviour {
             Destroyable.kills = 0;
             SceneManager.LoadScene("GameOver");
         }
+    }
+
+    public void setScore(float newScore) {
+        score += newScore;
+    }
+
+    public void levelComplete() {
+        //Destruir obstaculos restantes y llegar al planeta
+        score = 0f;
+        InfoPlayer.score = 0f;
     }
 
     public bool isAlive() {
