@@ -28,7 +28,10 @@ public class Player : MonoBehaviour {
             InfoPlayer.score = score;
             score = 0;
             Destroyable.kills = 0;
+            //AnimatorStateInfo stateInfo = GetComponent<Animator>().GetCurrentAnimatorStateInfo(0);
+            //if (stateInfo.IsName("newExplosion") && stateInfo.normalizedTime >= 1) {
             SceneManager.LoadScene("GameOver");
+            //}            
         }
     }
 
@@ -47,7 +50,11 @@ public class Player : MonoBehaviour {
     }
 
     public void impact() {
-        life--;
+        if (shieldPower >= 1) {
+            shieldPower--;
+        } else {
+            life--;
+        }        
     }
 
     public int getLifes() {
@@ -60,5 +67,13 @@ public class Player : MonoBehaviour {
 
     public int getShieldPower() {
         return shieldPower;
+    }
+
+    public void incrementShieldPower() {
+        shieldPower = 2;
+    }
+
+    public void decrementShieldPower() {
+        shieldPower--;
     }
 }

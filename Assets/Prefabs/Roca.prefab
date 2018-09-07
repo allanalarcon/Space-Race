@@ -40,7 +40,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1961969519763570}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.4942436, y: -3.020444, z: 0}
+  m_LocalPosition: {x: 12.44, y: -1.56, z: 0}
   m_LocalScale: {x: 0.24200845, y: 0.24200845, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
@@ -78,9 +78,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.62, y: 0.49}
+  m_Offset: {x: -0.43, y: 0}
   serializedVersion: 2
-  m_Radius: 4.25
+  m_Radius: 4.5788426
 --- !u!82 &82933439725380152
 AudioSource:
   m_ObjectHideFlags: 1
@@ -100,7 +100,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
+  MinDistance: 0.886076
   MaxDistance: 500
   Pan2D: 0.4
   rolloffMode: 0
@@ -206,7 +206,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocidad: 20
-  rotacion: 45
+  rotacion: 0
   timeLife: 4
 --- !u!114 &114706112101527644
 MonoBehaviour:
@@ -219,7 +219,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e9344ad1c05d764c8a7cb0ce3e3b079, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destroyState: newExplosion
+  destroyState: rocaQuebrando
   timeForDisable: 0
   player: 0
 --- !u!212 &212512124028460672
@@ -257,7 +257,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: f9ae4435b5bd0c5438bbb7587635b141, type: 3}
+  m_Sprite: {fileID: 21300000, guid: da9a56d8b1c5c7d4188c010574a8e424, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

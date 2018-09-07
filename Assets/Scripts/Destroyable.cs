@@ -6,8 +6,7 @@ public class Destroyable : MonoBehaviour {
 
     public string destroyState;
     public float timeForDisable;
-    public bool player = false;
-    private int impactos = 0;
+    public bool player = false;    
 
     public static int kills = 0;
 
@@ -32,14 +31,21 @@ public class Destroyable : MonoBehaviour {
 
     IEnumerator OnCollisionEnter2D(Collision2D collision) {
         bool destruir = false;
+        /*
         if (player) {            
             if (collision.collider.CompareTag("Obstaculo")) {
                 GetComponent<Player>().impact();
             }
             destruir = !GetComponent<Player>().isAlive();
-        } else {
-            destruir = collision.collider.CompareTag("Disparo") || collision.collider.CompareTag("Player");
+        } else {*/
+        if (collision.collider.CompareTag("Disparo") || collision.collider.CompareTag("Player")) {
+            int impac = anim.GetInteger("impactos");
+            anim.SetInteger("impactos", impac + 1);
+            if (impac+1 >= 2) {
+                destruir = true;
+            }                    
         }
+        //}
         if (destruir) {
             anim.Play(destroyState);
             sound.Play();
@@ -52,7 +58,4 @@ public class Destroyable : MonoBehaviour {
         }
     }
 
-    public int getImpactos() {
-        return impactos;
-    }
 }

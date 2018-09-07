@@ -658,8 +658,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Velocidad: 8
-  minLimit: {x: -12, y: -7}
-  maxLimit: {x: 12, y: 3.9}
+  minLimit: {x: -11.4, y: -7}
+  maxLimit: {x: 12.2, y: 3.9}
 --- !u!114 &114640250032421126
 MonoBehaviour:
   m_ObjectHideFlags: 1

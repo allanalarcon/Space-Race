@@ -14,11 +14,12 @@ public class ShipMovement : MonoBehaviour {
     private float angle = 3f;
     private int dir = 0;
     private Animator animState;
-    int impactos = 0;
+    Player player;
 
     void Start () {
 		rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+        player = GetComponent<Player>();
         animState = transform.GetChild(2).GetComponent<Animator>();
 	}
 	
@@ -51,17 +52,22 @@ public class ShipMovement : MonoBehaviour {
 
     private void OnCollisionEnter2D(Collision2D collision) {        
         if (collision.collider.CompareTag("Obstaculo")) {
-            impactos++;
-            if (impactos == 2) {
+            player.impact();            
+            if (player.getLifes() == 1) {
                 activarHumo();
                 rb.gravityScale = 15f;
             }
-            if (impactos < 3) {
+            if (player.getShieldPower()==0 && player.getLifes()<3) {
                 animState.Play("impacto");
-            } else {
-                transform.GetChild(1).GetComponent<ParticleSystem>().Stop();
+            } else if (!player.isAlive()){
+                transform.GetChild(1).GetComponent<ParticleSystem>().Stop(); // apaga motor
                 desactivarHumo();
-            }            
+                GetComponent<AudioSource>().Play();
+            }
+            anim.SetInteger("lifes", player.getLifes());
+        } else if (collision.collider.CompareTag("Shield")) {
+            Destroy(collision.collider.gameObject);
+            GetComponent<Player>().incrementShieldPower();            
         }
     }
 

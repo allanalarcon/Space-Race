@@ -71,7 +71,7 @@
     <Compile Include="Assets\Scripts\HUD.cs" />
     <Compile Include="Assets\Scripts\InfoPlayer.cs" />
     <Compile Include="Assets\Scripts\mouseOver.cs" />
-    <Compile Include="Assets\Scripts\Nodriza.cs" />
+    <Compile Include="Assets\Scripts\mouseOverNext.cs" />
     <Compile Include="Assets\Scripts\ObstaclesGenerator.cs" />
     <Compile Include="Assets\Scripts\ObstaclesMovement.cs" />
     <Compile Include="Assets\Scripts\ParedScript.cs" />
@@ -79,6 +79,7 @@
     <Compile Include="Assets\Scripts\SceneController.cs" />
     <Compile Include="Assets\Scripts\scoreManager.cs" />
     <Compile Include="Assets\Scripts\ShipMovement.cs" />
+    <Compile Include="Assets\Scripts\Token.cs" />
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>C:/Users/dario/Documents/DARIO/Universidad/2018 IT/Desarrollo de juegos de video/Proyecto/Space-Race/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>
