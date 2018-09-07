@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class ShipMovement : MonoBehaviour {
@@ -15,6 +16,7 @@ public class ShipMovement : MonoBehaviour {
     private int dir = 0;
     private Animator animState;
     Player player;
+    public Slider weapon;
 
     void Start () {
 		rb = GetComponent<Rigidbody2D>();
@@ -27,14 +29,11 @@ public class ShipMovement : MonoBehaviour {
 	void Update () {
         bool bup = Input.GetKey(KeyCode.UpArrow);
         bool bdown = Input.GetKey(KeyCode.DownArrow);
-        bool dispara = Input.GetKeyDown(KeyCode.Space) && InfoPlayer.getMode()!=3;
+        bool dispara = Input.GetKeyDown(KeyCode.Space) && InfoPlayer.getMode()!=3 && weapon.value < 0.95f;
         Mov = new Vector2(Input.GetAxis("Horizontal"),
                           Input.GetAxis("Vertical"));
         anim.SetBool("disparando", dispara);
-        if (dispara) {
-            AudioSource sound = transform.GetChild(0).GetComponent<AudioSource>();
-            sound.Play();
-        }
+
         if (bup) {
             dir = 1;
         } else if (bdown) {

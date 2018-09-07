@@ -13,13 +13,15 @@ public class HUD : MonoBehaviour {
     public GameObject nave;
     Player player;
     private int maxValue = 90; // Tiempo de duración del nivel en segundos
-    Slider barra;    
+    Slider barra;
+    Slider weapon;
 
 	// Use this for initialization
 	void Start () {
         vida = transform.GetChild(1).GetComponent<Animator>();
         escudo = transform.GetChild(2).GetComponent<Animator>();
         score = transform.GetChild(3).GetComponent<Text>();
+        weapon = transform.GetChild(6).GetComponent<Slider>();
         
         player = nave.GetComponent<Player>();  
         if (InfoPlayer.getMode() == 1) {
@@ -39,6 +41,13 @@ public class HUD : MonoBehaviour {
 	void Update () {
         vida.SetInteger("lifes", player.getLifes());
         escudo.SetInteger("ShieldPower", player.getShieldPower());
+
+        if (Input.GetKeyDown(KeyCode.Space)) {            
+            weapon.value += weapon.value < 1? 0.03f : 0f;
+        } else {
+            weapon.value -= weapon.value > 0 ? 0.001f : 0f;
+        }        
+
         
         if (InfoPlayer.getMode() == 1) {
             updateValue(player.getScore());
