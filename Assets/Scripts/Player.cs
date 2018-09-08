@@ -7,7 +7,8 @@ public class Player : MonoBehaviour {
 
     public static float score = 0f;
     private int life = 3;
-    private int shieldPower = 0;    
+    private int shieldPower = 0;
+    private bool endAnim = false;
     
 
     // Use this for initialization
@@ -16,7 +17,7 @@ public class Player : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
-        if (isAlive()) {
+        if (isAlive() && !endAnim) {
             if (InfoPlayer.getMode() == 3 || InfoPlayer.getMode() == 1) {
                 score += Time.deltaTime;
             }
@@ -25,13 +26,7 @@ public class Player : MonoBehaviour {
             }
         } else {
             // presentar game over
-            InfoPlayer.score = score;
-            score = 0;
-            Destroyable.kills = 0;
-            //AnimatorStateInfo stateInfo = GetComponent<Animator>().GetCurrentAnimatorStateInfo(0);
-            //if (stateInfo.IsName("newExplosion") && stateInfo.normalizedTime >= 1) {
-            SceneManager.LoadScene("GameOver");
-            //}            
+            toGameOver();            
         }
     }
 
@@ -75,5 +70,18 @@ public class Player : MonoBehaviour {
 
     public void decrementShieldPower() {
         shieldPower--;
+    }
+
+    public void toGameOver() {
+        InfoPlayer.score = score;
+        score = 0;
+        Destroyable.kills = 0;        
+  
+        SceneManager.LoadScene("GameOver");        
+    }
+
+    public void loadGameOver() {
+        endAnim = true;
+        print("game over");
     }
 }

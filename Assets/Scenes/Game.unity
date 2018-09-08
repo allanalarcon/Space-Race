@@ -144,7 +144,7 @@ RectTransform:
   - {fileID: 1282314570}
   - {fileID: 1083214449}
   m_Father: {fileID: 1138838763}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -288,7 +288,7 @@ RectTransform:
   - {fileID: 1833829119}
   - {fileID: 1730266787}
   m_Father: {fileID: 1138838763}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1339,8 +1339,8 @@ RectTransform:
   - {fileID: 1645089139}
   - {fileID: 2090094702}
   - {fileID: 807794429}
-  - {fileID: 66691874}
   - {fileID: 91646698}
+  - {fileID: 66691874}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6225,7 +6225,7 @@ MonoBehaviour:
   instanceRate: 1
   instanceAmount: 8
   instanceDelay: 0.3
-  meteoro: {fileID: 1672716196481558, guid: 7203df6e9d34563429299d8d3b0c1ac2, type: 2}
+  meteoro: {fileID: 1232684919253212, guid: 7203df6e9d34563429299d8d3b0c1ac2, type: 2}
   lluvia: {fileID: 1266995769492128, guid: 39a416595999af04a8868512b16ff79e, type: 2}
   agujero: {fileID: 1174594911951590, guid: 34e9abfc268b9be4393f418f04978a83, type: 2}
   robot: {fileID: 1167432561953354, guid: 8e3a9c34202263c468fd05ab5c17d6c3, type: 2}

@@ -9,6 +9,7 @@ public class mouseOverNext : MonoBehaviour {
     public GameObject Panel1;
     public GameObject Panel2;
     public GameObject Panel3;
+    public GameObject LoadingPanel;
 
 	// Use this for initialization
 	void Start () {
@@ -32,7 +33,8 @@ public class mouseOverNext : MonoBehaviour {
     	}
     	else if (Panel3.activeSelf == true) {
     		InfoPlayer.setMode(1);
-            SceneManager.LoadScene("Story");
+            LoadingPanel.SetActive(true);
+            //SceneManager.LoadScene("Story");
     	}
     }
 }

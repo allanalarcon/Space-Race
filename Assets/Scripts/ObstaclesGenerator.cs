@@ -43,13 +43,14 @@ public class ObstaclesGenerator : MonoBehaviour {
     }
 
     IEnumerator Meteoros() {
-        GameObject[] obstaculos = { meteoro,  roca , roca, meteoro,satelite1, roca, meteoro, meteoro};
+        GameObject[] obstaculos = { roca, robot, meteoro, meteoro, satelite2, meteoro, roca, meteoro, satelite1, meteoro, roca, roca};
+        int size = obstaculos.Length;
         while (true) {
 
             for (int i = 0; i < instanceAmount; i++) {
                 yield return new WaitForSeconds(instanceDelay);
-                GameObject ob = obstaculos[Random.Range(0, 8)];
-                Instantiate(ob, new Vector3(Random.Range(20, 25), Random.Range(yRange.x, yRange.y), 0), ob.transform.rotation);
+                GameObject ob = obstaculos[Random.Range(0, size)];
+                Instantiate(ob, new Vector3(21, Random.Range(yRange.x, yRange.y), 0), ob.transform.rotation);
             }
 
             yield return new WaitForSeconds(instanceRate);

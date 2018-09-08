@@ -49,21 +49,28 @@ public class ShipMovement : MonoBehaviour {
         rb.MoveRotation(angle * dir);
     }
 
-    private void OnCollisionEnter2D(Collision2D collision) {        
+    private IEnumerator OnCollisionEnter2D(Collision2D collision) {        
         if (collision.collider.CompareTag("Obstaculo")) {
-            player.impact();            
+            player.impact();
+            anim.SetInteger("lifes", player.getLifes());
             if (player.getLifes() == 1) {
                 activarHumo();
                 rb.gravityScale = 15f;
             }
-            if (player.getShieldPower()==0 && player.getLifes()<3) {
-                animState.Play("impacto");
-            } else if (!player.isAlive()){
+            
+            if (!player.isAlive()){
                 transform.GetChild(1).GetComponent<ParticleSystem>().Stop(); // apaga motor
                 desactivarHumo();
                 GetComponent<AudioSource>().Play();
+
+                yield return new WaitForSeconds(3f);
+                player.loadGameOver();
+            } else if (player.getShieldPower() == 0 && player.getLifes() < 3) {
+                animState.Play("impacto");
+                // Sonido de impacto
             }
-            anim.SetInteger("lifes", player.getLifes());
+
+
         } else if (collision.collider.CompareTag("Shield")) {
             Destroy(collision.collider.gameObject);
             GetComponent<Player>().incrementShieldPower();            

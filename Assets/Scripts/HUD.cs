@@ -21,7 +21,7 @@ public class HUD : MonoBehaviour {
         vida = transform.GetChild(1).GetComponent<Animator>();
         escudo = transform.GetChild(2).GetComponent<Animator>();
         score = transform.GetChild(3).GetComponent<Text>();
-        weapon = transform.GetChild(6).GetComponent<Slider>();
+        weapon = transform.GetChild(5).GetComponent<Slider>();
         
         player = nave.GetComponent<Player>();  
         if (InfoPlayer.getMode() == 1) {

@@ -5,8 +5,7 @@ using UnityEngine;
 public class Destroyable : MonoBehaviour {
 
     public string destroyState;
-    public float timeForDisable;
-    public bool player = false;    
+    public float timeForDisable;    
 
     public static int kills = 0;
 
@@ -31,23 +30,17 @@ public class Destroyable : MonoBehaviour {
 
     IEnumerator OnCollisionEnter2D(Collision2D collision) {
         bool destruir = false;
-        /*
-        if (player) {            
-            if (collision.collider.CompareTag("Obstaculo")) {
-                GetComponent<Player>().impact();
-            }
-            destruir = !GetComponent<Player>().isAlive();
-        } else {*/
+
         if (collision.collider.CompareTag("Disparo") || collision.collider.CompareTag("Player")) {
             int impac = anim.GetInteger("impactos");
-            anim.SetInteger("impactos", impac + 1);
-            if (impac+1 >= 2) {
+            anim.SetInteger("impactos", impac - 1);
+            if (impac-1 <= 0) {
                 destruir = true;
             }                    
         }
-        //}
+        
         if (destruir) {
-            anim.Play(destroyState);
+            //anim.Play(destroyState);
             sound.Play();
             kills++;
             yield return new WaitForSeconds(timeForDisable);
