@@ -47,6 +47,7 @@ public class Player : MonoBehaviour {
     public void impact() {
         if (shieldPower >= 1) {
             shieldPower--;
+            InfoPlayer.setShield(shieldPower);
         } else {
             life--;
         }        
@@ -66,10 +67,12 @@ public class Player : MonoBehaviour {
 
     public void incrementShieldPower() {
         shieldPower = 2;
+        InfoPlayer.setShield(2);
     }
 
     public void decrementShieldPower() {
         shieldPower--;
+        InfoPlayer.setShield(shieldPower);
     }
 
     public void toGameOver() {

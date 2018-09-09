@@ -6,6 +6,7 @@ using UnityEngine;
 public class InfoPlayer {
 
     public static float score = 0f;
+    public static int shield = 0;
     public static int gamemode = 0; //1-Story, 2-Disparar, 3-Survival
     
 
@@ -23,5 +24,13 @@ public class InfoPlayer {
 
     public static int getMode() {
         return gamemode;
+    }
+
+    public static void setShield(int i) {
+        shield = i;
+    }
+
+    public static int getShield() {
+        return shield;
     }
 }

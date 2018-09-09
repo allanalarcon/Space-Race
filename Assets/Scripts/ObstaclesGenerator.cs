@@ -16,6 +16,8 @@ public class ObstaclesGenerator : MonoBehaviour {
     public GameObject satelite1;
     public GameObject satelite2;
     public GameObject panel;
+    public GameObject escudo;
+    private float timeMisilLoad = 1f;
     public Vector2 yRange;
 
 
@@ -25,10 +27,22 @@ public class ObstaclesGenerator : MonoBehaviour {
     }
 
     void Update () {
+        timeMisilLoad += Time.deltaTime;
+
+        Debug.Log(timeMisilLoad);
+
+        if ( ( (int)timeMisilLoad % 15 == 0) && (InfoPlayer.getShield() != 2) ){
+            Instantiate(escudo, new Vector3(21, Random.Range(yRange.x, yRange.y), 0), escudo.transform.rotation);
+            timeMisilLoad = 1f;
+        }
+
+        if (((int)timeMisilLoad % 10 == 0) && (InfoPlayer.getMode() == 1)){
+            Instantiate(agujero, new Vector3(21, Random.Range(yRange.x+3, yRange.y-3), 0), agujero.transform.rotation);
+            timeMisilLoad += 1f;
+        }
+
         if(Input.GetKeyDown("p")){
             pausar();
-        }else if (Input.GetKeyDown("x")) {
-            Instantiate(agujero, new Vector3(Random.Range(20, 25), Random.Range(yRange.x+3, yRange.y-3), 0), agujero.transform.rotation);
         }
     }
 

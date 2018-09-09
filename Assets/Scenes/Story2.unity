@@ -6151,6 +6151,7 @@ MonoBehaviour:
   satelite1: {fileID: 1307360495012964, guid: 4a4261cdcbbb8a94fae74851768341de, type: 2}
   satelite2: {fileID: 1348121677300776, guid: 23fd092953f15da49a86886ac4f91cbd, type: 2}
   panel: {fileID: 66691873}
+  escudo: {fileID: 1650656238183912, guid: cadff2e07df8f754485819036b301aaf, type: 2}
   yRange: {x: -7, y: 3.8}
 --- !u!4 &1225023516
 Transform:
