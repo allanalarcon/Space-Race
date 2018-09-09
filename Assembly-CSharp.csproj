@@ -71,6 +71,7 @@
     <Compile Include="Assets\Scripts\HUD.cs" />
     <Compile Include="Assets\Scripts\InfoPlayer.cs" />
     <Compile Include="Assets\Scripts\Loading.cs" />
+    <Compile Include="Assets\Scripts\Misil.cs" />
     <Compile Include="Assets\Scripts\mouseOver.cs" />
     <Compile Include="Assets\Scripts\mouseOverNext.cs" />
     <Compile Include="Assets\Scripts\ObstaclesGenerator.cs" />

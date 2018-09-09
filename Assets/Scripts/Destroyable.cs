@@ -37,6 +37,8 @@ public class Destroyable : MonoBehaviour {
             if (impac-1 <= 0) {
                 destruir = true;
             }                    
+        } else if (collision.collider.CompareTag("Misil")) {
+            destruir = true;
         }
         
         if (destruir) {

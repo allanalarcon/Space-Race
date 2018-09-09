@@ -8,6 +8,7 @@ TagManager:
   - Disparo
   - Obstaculo
   - Shield
+  - Misil
   layers:
   - Default
   - TransparentFX

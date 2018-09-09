@@ -12,11 +12,14 @@ public class ShipMovement : MonoBehaviour {
 	public float Velocidad = 8f;
     public Vector2 minLimit = new Vector2(-12,-7);
     public Vector2 maxLimit = new Vector2(12,7);
+    public GameObject misil;
     private float angle = 3f;
     private int dir = 0;
     private Animator animState;
     Player player;
     public Slider weapon;
+    private bool misilAvailable = false;
+    private float timeMisilLoad = 1f;    
 
     void Start () {
 		rb = GetComponent<Rigidbody2D>();
@@ -30,9 +33,22 @@ public class ShipMovement : MonoBehaviour {
         bool bup = Input.GetKey(KeyCode.UpArrow);
         bool bdown = Input.GetKey(KeyCode.DownArrow);
         bool dispara = Input.GetKeyDown(KeyCode.Space) && InfoPlayer.getMode()!=3 && weapon.value < 0.95f;
+        bool disparoEspecial;
         Mov = new Vector2(Input.GetAxis("Horizontal"),
                           Input.GetAxis("Vertical"));
+        timeMisilLoad += Time.deltaTime;
+        misilAvailable = misilAvailable || (int)timeMisilLoad % 15 == 0;
+
+        disparoEspecial = Input.GetKeyDown(KeyCode.Z) && misilAvailable;
         anim.SetBool("disparando", dispara);
+        anim.SetBool("disparoEspecial", disparoEspecial);
+        if (disparoEspecial) {
+            GameObject bazuca = transform.GetChild(5).gameObject;
+            Instantiate(misil, bazuca.transform.position, misil.transform.rotation,bazuca.transform);
+            bazuca.GetComponent<AudioSource>().Play();
+            timeMisilLoad = 1f;
+            misilAvailable = false;
+        }
 
         if (bup) {
             dir = 1;
