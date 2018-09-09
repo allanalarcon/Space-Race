@@ -31,7 +31,12 @@ public class Loading : MonoBehaviour {
 
         if (sceneToLoad.CompareTo("Again")==0) {
             if (InfoPlayer.getMode() == 1) {
-                sceneToLoad = "Story";
+            	if (getContinue() == 1){
+            		sceneToLoad = "Story2";
+            	}
+            	else {
+            		sceneToLoad = "Story";
+            	}
             } else {
                 sceneToLoad = "Game";
             }            
@@ -66,5 +71,9 @@ public class Loading : MonoBehaviour {
 
 
 	}
+
+	public int getContinue(){
+        return PlayerPrefs.GetInt("Continue", 0);
+    }
 
 }

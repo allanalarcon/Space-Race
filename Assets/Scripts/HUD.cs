@@ -77,6 +77,7 @@ public class HUD : MonoBehaviour {
         } else {
             // Siguiente nivel - Cambiar escena level 2
             player.levelComplete();
+            saveContinue(1);
             SceneManager.LoadScene("LevelUp");
         }
         
@@ -97,4 +98,13 @@ public class HUD : MonoBehaviour {
     public void saveScoreShoot(int actual){
         PlayerPrefs.SetInt("MaxShoot", actual);
     }
+
+    public int getContinue(){
+        return PlayerPrefs.GetInt("Continue", 0);
+    }
+
+    public void saveContinue(int actual){
+        PlayerPrefs.SetInt("Continue", actual);
+    }
+
 }

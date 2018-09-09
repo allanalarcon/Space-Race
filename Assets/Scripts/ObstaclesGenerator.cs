@@ -29,9 +29,12 @@ public class ObstaclesGenerator : MonoBehaviour {
     void Update () {
         timeMisilLoad += Time.deltaTime;
 
-        Debug.Log(timeMisilLoad);
+        int ale = Random.Range(0, 5);
 
-        if ( ( (int)timeMisilLoad % 15 == 0) && (InfoPlayer.getShield() != 2) ){
+        Debug.Log(timeMisilLoad);
+        Debug.Log(ale);
+
+        if ( ( (int)timeMisilLoad % 15 == 0) && (InfoPlayer.getShield() != 2) && (ale == 1)){
             Instantiate(escudo, new Vector3(21, Random.Range(yRange.x, yRange.y), 0), escudo.transform.rotation);
             timeMisilLoad = 1f;
         }
