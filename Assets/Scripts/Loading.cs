@@ -29,8 +29,16 @@ public class Loading : MonoBehaviour {
 	{
 		AsyncOperation loading;
 
-		//Iniciamos la carga asíncrona de la escena y guardamos el proceso en 'loading'
-		loading = SceneManager.LoadSceneAsync(sceneToLoad, LoadSceneMode.Single);
+        if (sceneToLoad.CompareTo("Again")==0) {
+            if (InfoPlayer.getMode() == 1) {
+                sceneToLoad = "Story";
+            } else {
+                sceneToLoad = "Game";
+            }            
+        }
+
+        //Iniciamos la carga asíncrona de la escena y guardamos el proceso en 'loading'
+        loading = SceneManager.LoadSceneAsync(sceneToLoad, LoadSceneMode.Single);
 
 		//Bloqueamos el salto automático entre escenas para asegurarnos el control durante el proceso
 		loading.allowSceneActivation = false;
@@ -40,7 +48,7 @@ public class Loading : MonoBehaviour {
 			
 			//Actualizamos el % de carga de una forma optima 
 			//(concatenar con + tiene un alto coste en el rendimiento)
-			percentText.text = string.Format ("{0}%", loading.progress * 100);
+			percentText.text = string.Format ("{0}%", (int)(loading.progress * 100));
 
 			//Actualizamos la barra de carga
 			progressImage.fillAmount = loading.progress;

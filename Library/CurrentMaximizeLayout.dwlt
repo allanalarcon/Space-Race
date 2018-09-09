@@ -24,7 +24,7 @@ MonoBehaviour:
   m_MinSize: {x: 713, y: 492}
   m_MaxSize: {x: 18008, y: 14042}
   vertical: 0
-  controlID: 23250
+  controlID: 34257
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -124,10 +124,10 @@ MonoBehaviour:
     y: 0
     width: 643
     height: 659
-  m_MinSize: {x: 202, y: 421}
-  m_MaxSize: {x: 4002, y: 8021}
+  m_MinSize: {x: 202, y: 442}
+  m_MaxSize: {x: 4002, y: 8042}
   vertical: 1
-  controlID: 23233
+  controlID: 34258
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -186,9 +186,9 @@ MonoBehaviour:
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -2.039412, y: -0.06895859, z: 0.52734375}
+    m_Target: {x: 1.4159024, y: -0.48356336, z: 0.5345971}
     speed: 2
-    m_Value: {x: -2.039412, y: -0.06895859, z: 0.52734375}
+    m_Value: {x: 1.4159024, y: -0.48356336, z: 0.5345971}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -220,9 +220,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 19.578703
+    m_Target: 18.892738
     speed: 2
-    m_Value: 19.578703
+    m_Value: 18.892738
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -267,6 +267,8 @@ MonoBehaviour:
     - {fileID: 1107366727417453762, guid: 45641ac47da17634caa8383051e66e1e, type: 2}
     - {fileID: 1107195705450321528, guid: ecb4cb2518454234cb554fc1c042b656, type: 2}
     - {fileID: 1107048617362438766, guid: f06760187a965134d828c523cafad062, type: 2}
+    - {fileID: 1107068238454022014, guid: ee6ca112663961945b6e76e1fec32866, type: 2}
+    - {fileID: 1107039130170655570, guid: e2605557d7713fd44a4b0bdaee702b65, type: 2}
     m_ValueSerializationHelper:
     - e00: 0.5182363
       e01: 0
@@ -364,11 +366,43 @@ MonoBehaviour:
       e31: 0
       e32: 0
       e33: 1
+    - e00: 1.2315042
+      e01: 0
+      e02: 0
+      e03: -549.8711
+      e10: 0
+      e11: 1.2315042
+      e12: 0
+      e13: -195.42067
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    - e00: 0.82539743
+      e01: 0
+      e02: 0
+      e03: -115.38886
+      e10: 0
+      e11: 0.82539743
+      e12: 0
+      e13: 18.301483
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
   m_PreviewAnimator: {fileID: 0}
-  m_AnimatorController: {fileID: 9100000, guid: f06760187a965134d828c523cafad062,
+  m_AnimatorController: {fileID: 9100000, guid: ee6ca112663961945b6e76e1fec32866,
     type: 2}
   m_BreadCrumbs:
-  - m_Target: {fileID: 1107048617362438766, guid: f06760187a965134d828c523cafad062,
+  - m_Target: {fileID: 1107068238454022014, guid: ee6ca112663961945b6e76e1fec32866,
       type: 2}
     m_ScrollPosition: {x: 0, y: 0}
   stateMachineGraph: {fileID: 0}
@@ -425,8 +459,8 @@ MonoBehaviour:
     y: 352
     width: 643
     height: 307
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 202, y: 221}
+  m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 2}
   m_Panes:
   - {fileID: 2}
@@ -455,7 +489,7 @@ MonoBehaviour:
   m_MinSize: {x: 234, y: 492}
   m_MaxSize: {x: 10004, y: 14042}
   vertical: 1
-  controlID: 23251
+  controlID: 34201
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -474,8 +508,8 @@ MonoBehaviour:
     y: 0
     width: 397
     height: 328
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 204, y: 221}
+  m_MaxSize: {x: 4004, y: 4021}
   m_ActualView: {fileID: 11}
   m_Panes:
   - {fileID: 11}
@@ -508,9 +542,9 @@ MonoBehaviour:
   m_PersistentViewDataDictionary: {fileID: 0}
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: c4060000
+    m_SelectedIDs: dcdfe3ff
     m_LastClickedID: 0
-    m_ExpandedIDs: 8c13eeff88c2f1ff8ac2f1ff6ccef1ff52cff1ff96d0f1ff9ed0f1fffed0f1ff5ed1f1ff66d1f1ff6ed1f1fff6d1f1ff04d2f1ff0cd2f1ffa685f2ff568cf2ffda90f2ffc64af3ff60a7f3ff98adf3ffb2b4f3ff32c1f3ff92d0f3ff5ae9f3ffdc3ef4ff1a40f4ff4e7ef4ffcce7f4ff66baf9ff70baf9ffa4bbf9ffa2f4feff8637ffffcef0ffffe6fbffff00000000964000002e58000086590000c85900004a600000588500005c8d0000568f00005eae0000
+    m_ExpandedIDs: 30dce0ff6412e1ff421ae1ffc07be1ffbe92e1ff3cbce1ff12dfe1ffb4e4e1ffccf9e1ff020ee2ff58f1e6ff8c13eeff88c2f1ff8ac2f1ff6ccef1ff52cff1ff96d0f1ff9ed0f1fffed0f1ff5ed1f1ff66d1f1ff6ed1f1fff6d1f1ff04d2f1ff0cd2f1ffa685f2ff568cf2ffda90f2ffc64af3ff60a7f3ff98adf3ffb2b4f3ff32c1f3ff92d0f3ff5ae9f3ffdc3ef4ff1a40f4ff4e7ef4ffcce7f4ff66baf9ff70baf9ffa4bbf9ffa2f4feff8637ffffcef0ffffe6fbffff00000000964000002e58000086590000c85900004a600000588500005c8d0000568f00005eae00001ed10000cad1000000e8000058e8000002e9000058e9000006ea0000e2ea000092fb0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -596,11 +630,11 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scripts
+    - Assets/Sprites
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scripts
+  - Assets/Sprites
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\dario\Documents\DARIO\Universidad\2018 IT\Desarrollo
     de juegos de video\Proyecto\Space-Race
@@ -608,8 +642,8 @@ MonoBehaviour:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 5e0a0000
-    m_LastClickedID: 2654
+    m_SelectedIDs: 1e0f0000
+    m_LastClickedID: 3870
     m_ExpandedIDs: 0000000076090000b80a00001e0f000060310000623100006431000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -663,9 +697,9 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: c4060000
-    m_LastClickedInstanceID: 1732
-    m_HadKeyboardFocusLastEvent: 1
+    m_SelectedInstanceIDs: dcdfe3ff
+    m_LastClickedInstanceID: -1843236
+    m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: 142c0000409faeff00000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -690,7 +724,7 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
     m_NewAssetIndexInList: -1
-    m_ScrollPosition: {x: 0, y: 385.5}
+    m_ScrollPosition: {x: 0, y: 637.5}
     m_GridSize: 64
   m_DirectoriesAreaWidth: 110
 --- !u!114 &14

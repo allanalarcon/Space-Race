@@ -6,20 +6,14 @@ using UnityEngine.SceneManagement;
 public class SceneController : MonoBehaviour {
 
 	public void cambiarEscena(string escena){
-        if (escena == "Again"){
-            SceneManager.LoadScene(InfoPlayer.getMode()==1? "Story":"Game");
-        }
-        else if (escena == "Survival"){
-            InfoPlayer.setMode(3);
-            SceneManager.LoadScene("Game");
+        if (escena == "Survival"){
+            InfoPlayer.setMode(3);            
         }
         else if (escena == "Shooter"){
-            InfoPlayer.setMode(2);
-            SceneManager.LoadScene("Game");
+            InfoPlayer.setMode(2);            
         }
         else if (escena == "Story"){
-            InfoPlayer.setMode(1);
-            SceneManager.LoadScene("Story");
+            InfoPlayer.setMode(1);            
         }
 		else {
             SceneManager.LoadScene(escena);
