@@ -246,8 +246,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 274f93889886a3b428da2cf791c86d2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  radioExplosion: 25
   velocidad: 20
-  radio: 0.3
 --- !u!212 &212502086334708912
 SpriteRenderer:
   m_ObjectHideFlags: 1

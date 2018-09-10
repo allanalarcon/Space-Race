@@ -33,8 +33,12 @@ public class mouseOverNext : MonoBehaviour {
     	}
     	else if (Panel3.activeSelf == true) {
     		InfoPlayer.setMode(1);
-            LoadingPanel.SetActive(true);
-            //SceneManager.LoadScene("Story");
+            saveContinue(0);
+            LoadingPanel.SetActive(true);            
     	}
+    }
+
+    private void saveContinue(int actual) {
+        PlayerPrefs.SetInt("Continue", actual);
     }
 }

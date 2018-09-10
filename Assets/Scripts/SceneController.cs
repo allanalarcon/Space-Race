@@ -14,8 +14,7 @@ public class SceneController : MonoBehaviour {
         }
         else if (escena == "Story"){
             InfoPlayer.setMode(1);            
-        }
-		else if (escena == "Historia"){
+        
             if (getContinue() == 1){
                 SceneManager.LoadScene("Continue");
             }
@@ -23,6 +22,8 @@ public class SceneController : MonoBehaviour {
                 saveContinue(0);
                 SceneManager.LoadScene("Introduction");
             }
+        } else if (escena == "Story2") {
+            InfoPlayer.setMode(1);
         }
         else {
             SceneManager.LoadScene(escena);

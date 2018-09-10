@@ -19,12 +19,16 @@ public class ShipMovement : MonoBehaviour {
     Player player;
     public Slider weapon;
     private bool misilAvailable = false;
-    private float timeMisilLoad = 1f;    
+    private float timeMisilLoad = 1f;
+    private Image misilIndicator;
+    private AudioSource impactSound;
 
     void Start () {
 		rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         player = GetComponent<Player>();
+        misilIndicator = GameObject.Find("misilIndicator").GetComponent<Image>();
+        impactSound = transform.GetChild(2).GetComponent<AudioSource>();
         animState = transform.GetChild(2).GetComponent<Animator>();
 	}
 	
@@ -38,6 +42,12 @@ public class ShipMovement : MonoBehaviour {
                           Input.GetAxis("Vertical"));
         timeMisilLoad += Time.deltaTime;
         misilAvailable = misilAvailable || (int)timeMisilLoad % 15 == 0;
+        
+        if (misilAvailable && InfoPlayer.getMode()!=3) {
+            misilIndicator.color = new Color(3, 252, 244);
+        } else {
+            misilIndicator.color = new Color(6, 24, 36);
+        }
 
         disparoEspecial = Input.GetKeyDown(KeyCode.Z) && misilAvailable;
         anim.SetBool("disparando", dispara);
@@ -65,7 +75,7 @@ public class ShipMovement : MonoBehaviour {
         rb.MoveRotation(angle * dir);
     }
 
-    private IEnumerator OnCollisionEnter2D(Collision2D collision) {        
+    private void OnCollisionEnter2D(Collision2D collision) {        
         if (collision.collider.CompareTag("Obstaculo")) {
             player.impact();
             anim.SetInteger("lifes", player.getLifes());
@@ -79,17 +89,12 @@ public class ShipMovement : MonoBehaviour {
                 desactivarHumo();
                 GetComponent<AudioSource>().Play();
 
-                yield return new WaitForSeconds(3f);
-                player.loadGameOver();
             } else if (player.getShieldPower() == 0 && player.getLifes() < 3) {
                 animState.Play("impacto");
-                // Sonido de impacto
+                impactSound.Play();                
             }
 
 
-        } else if (collision.collider.CompareTag("Shield")) {
-            Destroy(collision.collider.gameObject);
-            GetComponent<Player>().incrementShieldPower();            
         }
     }
 

@@ -7,9 +7,7 @@ public class Player : MonoBehaviour {
 
     public static float score = 0f;
     private int life = 3;
-    private int shieldPower = 0;
-    private bool endAnim = false;
-    
+    private int shieldPower = 0;        
 
     // Use this for initialization
     void Start() {        
@@ -17,16 +15,13 @@ public class Player : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
-        if (isAlive() && !endAnim) {
+        if (isAlive()) {
             if (InfoPlayer.getMode() == 3 || InfoPlayer.getMode() == 1) {
                 score += Time.deltaTime;
             }
             else if (InfoPlayer.getMode() == 2){
                 score = Destroyable.kills;
             }
-        } else {
-            // presentar game over
-            toGameOver();            
         }
     }
 
@@ -83,8 +78,4 @@ public class Player : MonoBehaviour {
         SceneManager.LoadScene("GameOver");        
     }
 
-    public void loadGameOver() {
-        endAnim = true;
-        print("game over");
-    }
 }

@@ -28,7 +28,7 @@ public class Destroyable : MonoBehaviour {
 	}
 
 
-    IEnumerator OnCollisionEnter2D(Collision2D collision) {
+    void OnCollisionEnter2D(Collision2D collision) {
         bool destruir = false;
 
         if (collision.collider.CompareTag("Disparo") || collision.collider.CompareTag("Player")) {
@@ -38,14 +38,15 @@ public class Destroyable : MonoBehaviour {
                 destruir = true;
             }                    
         } else if (collision.collider.CompareTag("Misil")) {
+            print("Colision Destroyable " + collision.collider.gameObject.name);
             destruir = true;
+            anim.SetInteger("impactos", 0);
         }
         
-        if (destruir) {
-            //anim.Play(destroyState);
+        if (destruir) {            
             sound.Play();
             kills++;
-            yield return new WaitForSeconds(timeForDisable);
+            //yield return new WaitForSeconds(timeForDisable);
 
             foreach (Collider2D col in GetComponents<Collider2D>()) {
                 col.enabled = false;

@@ -15,7 +15,7 @@ public class Token : MonoBehaviour {
         if (collision.CompareTag("Player")) {
             collision.gameObject.GetComponent<Player>().incrementShieldPower();
             sound.Play();
-            Destroy(gameObject);
+            Destroy(GetComponent<SpriteRenderer>());
         } else if (collision.CompareTag("Finish")) {
             Destroy(gameObject);
         }

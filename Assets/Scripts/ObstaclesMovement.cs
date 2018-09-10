@@ -23,6 +23,7 @@ public class ObstaclesMovement : MonoBehaviour {
     }
 
     void OnCollisionEnter2D(Collision2D other) {
+        
         if (other.collider.CompareTag("Finish")) {
             Destroy(gameObject);
         } else if (other.collider.CompareTag("Player")) {
