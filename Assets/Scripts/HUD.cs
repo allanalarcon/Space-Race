@@ -8,21 +8,24 @@ public class HUD : MonoBehaviour {
 
     Animator vida;
     Animator escudo;
+    Animator misil;
     Text score;
     Text best;
     public GameObject nave;
     Player player;
-    private int maxValue = 90; // Tiempo de duración del nivel en segundos
+    public int levelTime = 90; // Tiempo de duración del nivel en segundos
     Slider barra;
-    Slider weapon;
+    Slider weapon;    
+    ShipMovement ship;
 
 	// Use this for initialization
 	void Start () {
         vida = transform.GetChild(1).GetComponent<Animator>();
         escudo = transform.GetChild(2).GetComponent<Animator>();
+        misil = GameObject.Find("misilIndicator").GetComponent<Animator>();
         score = transform.GetChild(3).GetComponent<Text>();
         weapon = transform.GetChild(5).GetComponent<Slider>();
-        
+        ship = nave.GetComponent<ShipMovement>();
         player = nave.GetComponent<Player>();  
         if (InfoPlayer.getMode() == 1) {
             barra = transform.GetChild(4).GetComponent<Slider>();
@@ -41,6 +44,7 @@ public class HUD : MonoBehaviour {
 	void Update () {
         vida.SetInteger("lifes", player.getLifes());
         escudo.SetInteger("ShieldPower", player.getShieldPower());
+        misil.SetBool("disparoEspecial", ship.getMisilAvailable());
 
         if (Input.GetKeyDown(KeyCode.Space)) {            
             weapon.value += weapon.value < 1? 0.03f : 0f;
@@ -69,16 +73,22 @@ public class HUD : MonoBehaviour {
 	}
 
     public void updateValue(float value) {
-        float progress = value / maxValue;
+        float progress = value / levelTime;
         int porcentaje = (int)(progress * 100);
         if (porcentaje <= 100) {
             barra.value = progress;
             score.text = porcentaje + " %";
         } else {
-            // Siguiente nivel - Cambiar escena level 2
+            // Siguiente nivel - Cambiar escena level 
             player.levelComplete();
-            saveContinue(1);
-            SceneManager.LoadScene("LevelUp");
+            if (getContinue() == 0) {                
+                saveContinue(1);
+                SceneManager.LoadScene("LevelUp");
+            } else {
+                saveContinue(0);
+                SceneManager.LoadScene("VideoLlegadaPlaneta");
+            }
+            
         }
         
     }

@@ -883,7 +883,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -18.53345, y: 57.780796}
+  m_AnchoredPosition: {x: -18.533447, y: 57.780792}
   m_SizeDelta: {x: 558.5, y: 325.2351}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1559010279
@@ -1500,16 +1500,16 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1559010277}
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 1835042869}
+        m_MethodName: cambiarEscena
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
+          m_StringArgument: VideoLevel2
+          m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null

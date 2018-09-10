@@ -38,7 +38,6 @@ public class Destroyable : MonoBehaviour {
                 destruir = true;
             }                    
         } else if (collision.collider.CompareTag("Misil")) {
-            print("Colision Destroyable " + collision.collider.gameObject.name);
             destruir = true;
             anim.SetInteger("impactos", 0);
         }

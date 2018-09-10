@@ -57,7 +57,7 @@ public class ObstaclesGenerator : MonoBehaviour {
     }
 
     IEnumerator Meteoros() {
-        GameObject[] obstaculos = { roca, robot, meteoro, meteoro, satelite2, meteoro, roca, meteoro, satelite1, meteoro, roca, roca};
+        GameObject[] obstaculos = { roca, roca, robot, meteoro, meteoro, satelite2, meteoro, meteoro, roca, meteoro, satelite1, roca, meteoro, roca, roca, meteoro};
         int size = obstaculos.Length;
         while (true) {
 

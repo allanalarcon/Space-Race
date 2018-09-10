@@ -798,7 +798,7 @@ MonoBehaviour:
   Velocidad: 6
   minLimit: {x: -10, y: -6.75}
   maxLimit: {x: 10, y: 3.75}
-  misil: {fileID: 0}
+  misil: {fileID: 1715936486270776, guid: a5e90a52b5a2e7e46a0a0fdada27a6f7, type: 2}
   weapon: {fileID: 0}
 --- !u!114 &114605897974434556
 MonoBehaviour:

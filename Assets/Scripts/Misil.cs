@@ -23,7 +23,6 @@ public class Misil : MonoBehaviour {
 
     private void OnCollisionEnter2D(Collision2D collision) {
         if (collision.collider.CompareTag("Obstaculo")) {
-            Debug.Log("Colision Misil " + collision.collider.gameObject.name);
             GetComponentInParent<AudioSource>().Pause();            
             
             if (GetComponent<PolygonCollider2D>().enabled) {

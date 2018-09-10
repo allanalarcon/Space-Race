@@ -19,15 +19,13 @@ public class ShipMovement : MonoBehaviour {
     Player player;
     public Slider weapon;
     private bool misilAvailable = false;
-    private float timeMisilLoad = 1f;
-    private Image misilIndicator;
+    private float timeMisilLoad = 1f;    
     private AudioSource impactSound;
 
     void Start () {
 		rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
-        player = GetComponent<Player>();
-        misilIndicator = GameObject.Find("misilIndicator").GetComponent<Image>();
+        player = GetComponent<Player>();        
         impactSound = transform.GetChild(2).GetComponent<AudioSource>();
         animState = transform.GetChild(2).GetComponent<Animator>();
 	}
@@ -41,13 +39,7 @@ public class ShipMovement : MonoBehaviour {
         Mov = new Vector2(Input.GetAxis("Horizontal"),
                           Input.GetAxis("Vertical"));
         timeMisilLoad += Time.deltaTime;
-        misilAvailable = misilAvailable || (int)timeMisilLoad % 15 == 0;
-        
-        if (misilAvailable && InfoPlayer.getMode()!=3) {
-            misilIndicator.color = new Color(3, 252, 244);
-        } else {
-            misilIndicator.color = new Color(6, 24, 36);
-        }
+        misilAvailable = misilAvailable || (int)timeMisilLoad % 15 == 0 && InfoPlayer.getMode()!=3;        
 
         disparoEspecial = Input.GetKeyDown(KeyCode.Z) && misilAvailable;
         anim.SetBool("disparando", dispara);
@@ -117,5 +109,9 @@ public class ShipMovement : MonoBehaviour {
     private void desactivarHumo() {
         transform.GetChild(3).GetComponent<ParticleSystem>().Stop();
         transform.GetChild(4).GetComponent<ParticleSystem>().Stop();
+    }
+
+    public bool getMisilAvailable() {
+        return misilAvailable;
     }
 }
