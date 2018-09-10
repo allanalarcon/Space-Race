@@ -247,6 +247,26 @@ Prefab:
       propertyPath: weapon
       value: 
       objectReference: {fileID: 21305266}
+    - target: {fileID: 60127042478555424, guid: 3326126052aad4749bea630c6e057b93,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114444254912500388, guid: 3326126052aad4749bea630c6e057b93,
+        type: 2}
+      propertyPath: minLimit.x
+      value: -9.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114444254912500388, guid: 3326126052aad4749bea630c6e057b93,
+        type: 2}
+      propertyPath: minLimit.y
+      value: -7.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114444254912500388, guid: 3326126052aad4749bea630c6e057b93,
+        type: 2}
+      propertyPath: maxLimit.x
+      value: 10.4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3326126052aad4749bea630c6e057b93, type: 2}
   m_IsPrefabAsset: 0
@@ -1340,6 +1360,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nave: {fileID: 1102986044}
   levelTime: 120
+  barraDisparo: {fileID: 21305264}
+  iconoMisil: {fileID: 260487242}
 --- !u!82 &1138838765
 AudioSource:
   m_ObjectHideFlags: 0
@@ -6248,7 +6270,7 @@ MonoBehaviour:
   satelite2: {fileID: 1348121677300776, guid: 23fd092953f15da49a86886ac4f91cbd, type: 2}
   panel: {fileID: 66691873}
   escudo: {fileID: 1650656238183912, guid: cadff2e07df8f754485819036b301aaf, type: 2}
-  yRange: {x: -7, y: 3.8}
+  yRange: {x: -6.8, y: 3.5}
 --- !u!4 &1225023516
 Transform:
   m_ObjectHideFlags: 0

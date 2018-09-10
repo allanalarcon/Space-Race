@@ -25,6 +25,10 @@ public class SceneController : MonoBehaviour {
         } else if (escena == "Story2") {
             InfoPlayer.setMode(1);
         }
+        else if (escena == "Introduction"){
+            saveContinue(0);
+            SceneManager.LoadScene(escena);
+        }
         else {
             SceneManager.LoadScene(escena);
         }

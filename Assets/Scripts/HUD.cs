@@ -17,6 +17,8 @@ public class HUD : MonoBehaviour {
     Slider barra;
     Slider weapon;    
     ShipMovement ship;
+    public GameObject barraDisparo;
+    public GameObject iconoMisil;
 
 	// Use this for initialization
 	void Start () {
@@ -37,7 +39,8 @@ public class HUD : MonoBehaviour {
                 best.text = "Best: " + getScoreTime().ToString();
             }
         }
-        
+        barraDisparo.SetActive(true);
+        iconoMisil.SetActive(true);
     }
 	
 	// Update is called once per frame
@@ -63,6 +66,9 @@ public class HUD : MonoBehaviour {
                     saveScoreShoot((int)player.getScore());
                 }
             } else if (InfoPlayer.getMode() == 3) {
+
+                barraDisparo.SetActive(false);
+                iconoMisil.SetActive(false);
                 if ((int)player.getScore() >= getScoreTime()) {
                     best.text = "Best: " + score.text;
                     saveScoreTime((int)player.getScore());

@@ -32,10 +32,10 @@ public class Loading : MonoBehaviour {
         if (sceneToLoad.CompareTo("Again")==0) {
             if (InfoPlayer.getMode() == 1) {
             	if (getContinue() == 0){
-            		sceneToLoad = "Story2";
+            		sceneToLoad = "Story";
             	}
             	else {
-            		sceneToLoad = "Story";
+            		sceneToLoad = "Story2";
             	}
             } else {
                 sceneToLoad = "Game";
