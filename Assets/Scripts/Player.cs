@@ -28,7 +28,11 @@ public class Player : MonoBehaviour {
     }
 
     public void setScore(float newScore) {
-        score += newScore;
+        if (score+newScore < 0) {
+            score = 0f;
+        } else {
+            score += newScore;
+        }        
     }
 
     public void levelComplete() {

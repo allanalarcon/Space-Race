@@ -142,7 +142,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1328564148362230}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.9897907, y: 0.307858, z: 0}
+  m_LocalPosition: {x: -1.9897907, y: -1.55, z: 0}
   m_LocalScale: {x: 0.6666667, y: 0.6666667, z: 0}
   m_Children: []
   m_Father: {fileID: 4271410715407860}
@@ -796,8 +796,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Velocidad: 6
-  minLimit: {x: -10, y: -6.75}
-  maxLimit: {x: 10, y: 3.75}
+  minLimit: {x: -9.5, y: -7.1}
+  maxLimit: {x: 10.4, y: 3.75}
   misil: {fileID: 1715936486270776, guid: a5e90a52b5a2e7e46a0a0fdada27a6f7, type: 2}
   weapon: {fileID: 0}
 --- !u!114 &114605897974434556

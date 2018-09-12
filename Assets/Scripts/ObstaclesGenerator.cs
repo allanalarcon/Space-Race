@@ -39,23 +39,25 @@ public class ObstaclesGenerator : MonoBehaviour {
     }
 
     void Update () {
-        timeMisilLoad += Time.deltaTime;
+        if (generar) {
+            timeMisilLoad += Time.deltaTime;
 
-        int ale = Random.Range(0, 5);
+            int ale = Random.Range(0, 5);
 
-        if ( ( (int)timeMisilLoad % 15 == 0) && (InfoPlayer.getShield() != 2) && (ale == 1)){
-            Instantiate(escudo, new Vector3(21, Random.Range(yRange.x, yRange.y), 0), escudo.transform.rotation);
-            timeMisilLoad = 1f;
+            if (((int)timeMisilLoad % 15 == 0) && (InfoPlayer.getShield() != 2) && (ale == 1)) {
+                Instantiate(escudo, new Vector3(21, Random.Range(yRange.x, yRange.y), 0), escudo.transform.rotation);
+                timeMisilLoad = 1f;
+            }
+
+            if (((int)timeMisilLoad % 10 == 0) && (InfoPlayer.getMode() == 1)) {
+                Instantiate(agujero, new Vector3(21, Random.Range(yRange.x + 3, yRange.y - 3), 0), agujero.transform.rotation);
+                timeMisilLoad += 1f;
+            }
         }
-
-        if (((int)timeMisilLoad % 10 == 0) && (InfoPlayer.getMode() == 1)){
-            Instantiate(agujero, new Vector3(21, Random.Range(yRange.x+3, yRange.y-3), 0), agujero.transform.rotation);
-            timeMisilLoad += 1f;
-        }
-
-        if(Input.GetKeyDown("p")){
+        if (Input.GetKeyDown("p")) {
             pausar();
         }
+        
     }
 
     public void pausar(){

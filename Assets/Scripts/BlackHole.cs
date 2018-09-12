@@ -20,11 +20,23 @@ public class BlackHole : MonoBehaviour {
         
         if (collision.CompareTag("Player")) {
             // Animación de transición
+            GameObject.Find("GameController").GetComponent<ObstaclesGenerator>().switchGenerator();
+            //GameObject.Find("InHole").SetActive(true);            
 
             sound.Play();
-            collision.gameObject.GetComponent<Player>().setScore(Random.Range(-15,15));
+            collision.gameObject.GetComponent<Player>().setScore(Random.Range(-15, 15));
         } else {
             Destroy(collision.gameObject);
         }
+    }
+
+    public void desactivarAnimacion() {
+        GameObject.Find("InHole").SetActive(false);
+        GameObject.Find("GameController").GetComponent<ObstaclesGenerator>().switchGenerator();
+        sound.Play();
+        
+
+        //Escupir nave
+
     }
 }

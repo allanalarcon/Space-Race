@@ -20,7 +20,7 @@ public class ShipMovement : MonoBehaviour {
     public Slider weapon;
     private bool misilAvailable = false;
     private float timeMisilLoad = 1f;    
-    private AudioSource impactSound;
+    private AudioSource impactSound;    
 
     void Start () {
 		rb = GetComponent<Rigidbody2D>();
@@ -31,7 +31,7 @@ public class ShipMovement : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void Update () {        
         bool bup = Input.GetKey(KeyCode.UpArrow);
         bool bdown = Input.GetKey(KeyCode.DownArrow);
         bool dispara = Input.GetKeyDown(KeyCode.Space) && InfoPlayer.getMode()!=3 && weapon.value < 0.95f && player.isAlive();
@@ -44,13 +44,7 @@ public class ShipMovement : MonoBehaviour {
         disparoEspecial = Input.GetKeyDown(KeyCode.Z) && misilAvailable && player.isAlive();
         anim.SetBool("disparando", dispara);
         anim.SetBool("disparoEspecial", disparoEspecial);
-        if (disparoEspecial) {
-            GameObject bazuca = transform.GetChild(5).gameObject;
-            Instantiate(misil, bazuca.transform.position, misil.transform.rotation,bazuca.transform);
-            bazuca.GetComponent<AudioSource>().Play();
-            timeMisilLoad = 1f;
-            misilAvailable = false;
-        }
+        
 
         if (bup) {
             dir = 1;
@@ -62,6 +56,7 @@ public class ShipMovement : MonoBehaviour {
 	}
 
     void FixedUpdate() {
+        if (!player.isAlive()) { return; }
         Vector2 newPosition = rb.position + Mov * Velocidad * Time.deltaTime;
         rb.MovePosition(fixPosition(newPosition));
         rb.MoveRotation(angle * dir);
@@ -73,19 +68,19 @@ public class ShipMovement : MonoBehaviour {
             anim.SetInteger("lifes", player.getLifes());
             if (player.getLifes() == 1) {
                 activarHumo();
-                rb.gravityScale = 15f;
+                rb.gravityScale = 13f;
             }
             
             if (!player.isAlive()){
                 transform.GetChild(1).GetComponent<ParticleSystem>().Stop(); // apaga motor
                 desactivarHumo();
+                rb.gravityScale = 0f;
                 GetComponent<AudioSource>().Play();
 
             } else if (player.getShieldPower() == 0 && player.getLifes() < 3) {
-                animState.Play("impacto");
-                impactSound.Play();                
+                animState.Play("impacto");                                
             }
-
+            impactSound.Play();
 
         }
     }
@@ -113,5 +108,14 @@ public class ShipMovement : MonoBehaviour {
 
     public bool getMisilAvailable() {
         return misilAvailable;
+    }
+
+    private void dispararMisil() {
+        Debug.Log("Disparando misil");
+        GameObject bazuca = transform.GetChild(5).gameObject;
+        Instantiate(misil, bazuca.transform.position, misil.transform.rotation, bazuca.transform);
+        bazuca.GetComponent<AudioSource>().Play();
+        timeMisilLoad = 1f;
+        //misilAvailable = false;
     }
 }
