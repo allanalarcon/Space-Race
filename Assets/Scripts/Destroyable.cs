@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class Destroyable : MonoBehaviour {
 
-    public string destroyState;
-    public float timeForDisable;    
+    [SerializeField]
+    private string destroyState;
+    [SerializeField]
+    private float timeForDisable;    
 
     public static int kills = 0;
 

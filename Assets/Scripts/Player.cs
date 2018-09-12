@@ -22,6 +22,8 @@ public class Player : MonoBehaviour {
             else if (InfoPlayer.getMode() == 2){
                 score = Destroyable.kills;
             }
+        } else {
+            levelComplete();
         }
     }
 

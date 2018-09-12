@@ -6,19 +6,23 @@ using UnityEngine.SceneManagement;
 
 public class HUD : MonoBehaviour {
 
-    Animator vida;
-    Animator escudo;
-    Animator misil;
-    Text score;
-    Text best;
-    public GameObject nave;
-    Player player;
-    public int levelTime = 90; // Tiempo de duración del nivel en segundos
-    Slider barra;
-    Slider weapon;    
-    ShipMovement ship;
-    public GameObject barraDisparo;
-    public GameObject iconoMisil;
+    private Animator vida;
+    private Animator escudo;
+    private Animator misil;
+    private Text score;
+    private Text best;
+    [SerializeField]
+    private GameObject nave;
+    private Player player;
+    [SerializeField]
+    private int levelTime = 90; // Tiempo de duración del nivel en segundos
+    private Slider barra;
+    private Slider weapon;    
+    private ShipMovement ship;
+    [SerializeField]
+    private GameObject barraDisparo;
+    [SerializeField]
+    private GameObject iconoMisil;
 
 	// Use this for initialization
 	void Start () {

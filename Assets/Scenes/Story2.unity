@@ -250,7 +250,7 @@ Prefab:
     - target: {fileID: 60127042478555424, guid: 3326126052aad4749bea630c6e057b93,
         type: 2}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114444254912500388, guid: 3326126052aad4749bea630c6e057b93,
         type: 2}
@@ -6148,7 +6148,7 @@ MonoBehaviour:
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 0}
   m_FillRect: {fileID: 1304396439}
   m_HandleRect: {fileID: 0}

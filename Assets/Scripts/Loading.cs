@@ -6,8 +6,6 @@ using UnityEngine.SceneManagement;
 
 public class Loading : MonoBehaviour {
 
-	//Esta es la forma correcta de mostrar variables privadas en el inspector. 
-	//No se deben hacer public variables que no queremos sean accesibles desde otras clases-
 	[SerializeField]
 	private string sceneToLoad;
 
@@ -74,6 +72,10 @@ public class Loading : MonoBehaviour {
 
 	public int getContinue(){
         return PlayerPrefs.GetInt("Continue", 0);
+    }
+
+    public void setScene(string scene) {
+        sceneToLoad = scene;
     }
 
 }

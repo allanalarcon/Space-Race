@@ -34,14 +34,14 @@ public class ShipMovement : MonoBehaviour {
 	void Update () {
         bool bup = Input.GetKey(KeyCode.UpArrow);
         bool bdown = Input.GetKey(KeyCode.DownArrow);
-        bool dispara = Input.GetKeyDown(KeyCode.Space) && InfoPlayer.getMode()!=3 && weapon.value < 0.95f;
+        bool dispara = Input.GetKeyDown(KeyCode.Space) && InfoPlayer.getMode()!=3 && weapon.value < 0.95f && player.isAlive();
         bool disparoEspecial;
         Mov = new Vector2(Input.GetAxis("Horizontal"),
                           Input.GetAxis("Vertical"));
         timeMisilLoad += Time.deltaTime;
         misilAvailable = misilAvailable || (int)timeMisilLoad % 15 == 0 && InfoPlayer.getMode()!=3;        
 
-        disparoEspecial = Input.GetKeyDown(KeyCode.Z) && misilAvailable;
+        disparoEspecial = Input.GetKeyDown(KeyCode.Z) && misilAvailable && player.isAlive();
         anim.SetBool("disparando", dispara);
         anim.SetBool("disparoEspecial", disparoEspecial);
         if (disparoEspecial) {

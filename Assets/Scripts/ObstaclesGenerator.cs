@@ -5,20 +5,32 @@ using UnityEngine.UI;
 
 public class ObstaclesGenerator : MonoBehaviour {
 
-    public float instanceRate = 2f;
-    public int instanceAmount = 8;
-    public float instanceDelay = 0.5f;
-    public GameObject meteoro;
-    public GameObject lluvia;
-    public GameObject agujero;
-    public GameObject robot;
-    public GameObject roca;
-    public GameObject satelite1;
-    public GameObject satelite2;
-    public GameObject panel;
-    public GameObject escudo;
+    [SerializeField]
+    private float instanceRate = 2f;
+    [SerializeField]
+    private int instanceAmount = 8;
+    [SerializeField]
+    private float instanceDelay = 0.5f;
+    [SerializeField]
+    private GameObject meteoro;
+    [SerializeField]
+    private GameObject agujero;
+    [SerializeField]
+    private GameObject robot;
+    [SerializeField]
+    private GameObject roca;
+    [SerializeField]
+    private GameObject satelite1;
+    [SerializeField]
+    private GameObject satelite2;
+    [SerializeField]
+    private GameObject panel;
+    [SerializeField]
+    private GameObject escudo;    
     private float timeMisilLoad = 1f;
-    public Vector2 yRange;
+    [SerializeField]
+    private Vector2 yRange;
+    private bool generar = true;
 
 
     void Start() {
@@ -59,7 +71,7 @@ public class ObstaclesGenerator : MonoBehaviour {
     IEnumerator Meteoros() {
         GameObject[] obstaculos = { roca, roca, robot, meteoro, meteoro, satelite2, meteoro, meteoro, roca, meteoro, satelite1, roca, meteoro, roca, roca, meteoro};
         int size = obstaculos.Length;
-        while (true) {
+        while (generar) {
 
             for (int i = 0; i < instanceAmount; i++) {
                 yield return new WaitForSeconds(instanceDelay);
@@ -86,5 +98,9 @@ public class ObstaclesGenerator : MonoBehaviour {
 
     public void saveScoreShoot(int actual){
         PlayerPrefs.SetInt("MaxShoot", actual);
+    }
+
+    public void switchGenerator() {
+        generar = !generar;
     }
 }

@@ -14,12 +14,17 @@ public class SceneController : MonoBehaviour {
         }
         else if (escena == "Story"){
             InfoPlayer.setMode(1);            
-        
+            
             if (getContinue() == 1){
                 SceneManager.LoadScene("Continue");
             }
             else {
                 saveContinue(0);
+                /* //Carga de la escena con Laoding
+                GameObject loadingPanel = GameObject.Find("Canvas").transform.GetChild(5).gameObject;
+                loadingPanel.GetComponent<Loading>().setScene("Introduction");
+                loadingPanel.SetActive(true);
+                */
                 SceneManager.LoadScene("Introduction");
             }
         } else if (escena == "Story2") {
