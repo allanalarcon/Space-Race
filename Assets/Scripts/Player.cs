@@ -30,9 +30,12 @@ public class Player : MonoBehaviour {
     public void setScore(float newScore) {
         if (score+newScore < 0) {
             score = 0f;
-        } else {
+        } else if (score+newScore > 100) {
+            score = 100f;
+        }
+        else {
             score += newScore;
-        }        
+        }
     }
 
     public void levelComplete() {

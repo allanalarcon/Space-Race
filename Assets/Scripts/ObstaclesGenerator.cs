@@ -35,6 +35,7 @@ public class ObstaclesGenerator : MonoBehaviour {
 
     void Start() {
         Time.timeScale = 1;
+        InfoPlayer.setScore(0);
         StartCoroutine(Meteoros());
     }
 

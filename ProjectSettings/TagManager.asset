@@ -9,6 +9,7 @@ TagManager:
   - Obstaculo
   - Shield
   - Misil
+  - Transicion
   layers:
   - Default
   - TransparentFX
