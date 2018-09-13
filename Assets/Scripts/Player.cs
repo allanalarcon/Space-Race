@@ -10,7 +10,8 @@ public class Player : MonoBehaviour {
     private int shieldPower = 0;        
 
     // Use this for initialization
-    void Start() {        
+    void Start() {
+        score = 0f;
     }
 
     // Update is called once per frame
@@ -27,6 +28,10 @@ public class Player : MonoBehaviour {
         }
     }
 
+    public void resetScore(){
+        score = 0f;
+    }
+    
     public void setScore(float newScore) {
         if (score+newScore < 0) {
             score = 0f;
@@ -81,7 +86,7 @@ public class Player : MonoBehaviour {
 
     public void toGameOver() {
         InfoPlayer.score = score;
-        score = 0;
+        score = 0f;
         Destroyable.kills = 0;        
   
         SceneManager.LoadScene("GameOver");        

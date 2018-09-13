@@ -7051,6 +7051,11 @@ Prefab:
       propertyPath: weapon
       value: 
       objectReference: {fileID: 1528999685}
+    - target: {fileID: 60896422591992164, guid: d9972f74fa8865041b94158d11307df5,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d9972f74fa8865041b94158d11307df5, type: 2}
   m_IsPrefabAsset: 0

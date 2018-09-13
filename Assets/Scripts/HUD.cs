@@ -32,7 +32,10 @@ public class HUD : MonoBehaviour {
         score = transform.GetChild(3).GetComponent<Text>();
         weapon = transform.GetChild(5).GetComponent<Slider>();
         ship = nave.GetComponent<ShipMovement>();
-        player = nave.GetComponent<Player>();  
+        player = nave.GetComponent<Player>();
+        Destroyable.kills = 0;
+        player.resetScore();
+        InfoPlayer.setScore(0);
         if (InfoPlayer.getMode() == 1) {
             barra = transform.GetChild(4).GetComponent<Slider>();
         } else {
