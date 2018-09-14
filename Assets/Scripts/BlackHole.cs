@@ -27,8 +27,6 @@ public class BlackHole : MonoBehaviour {
             collision.gameObject.GetComponent<Player>().setScore(Random.Range(-15, 15));
             collision.gameObject.GetComponent<ShipMovement>().blockUnblockShoot();
 
-
-
         } else if (collision.CompareTag("Finish")){
             Destroy(gameObject);
         }

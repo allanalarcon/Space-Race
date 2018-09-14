@@ -101,12 +101,12 @@ public class ShipMovement : MonoBehaviour {
         return fixedPosition;
     }
 
-    private void activarHumo() {
+    public void activarHumo() {
         transform.GetChild(3).GetComponent<ParticleSystem>().Play();
         transform.GetChild(4).GetComponent<ParticleSystem>().Play();
     }
 
-    private void desactivarHumo() {
+    public void desactivarHumo() {
         transform.GetChild(3).GetComponent<ParticleSystem>().Stop();
         transform.GetChild(4).GetComponent<ParticleSystem>().Stop();
     }

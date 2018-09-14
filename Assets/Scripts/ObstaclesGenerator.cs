@@ -32,26 +32,31 @@ public class ObstaclesGenerator : MonoBehaviour {
     private Vector2 yRange;
     private bool generar = true;
     private BoxCollider2D delimiter;
+    int x = 0;
 
     void Start() {
         Time.timeScale = 1;
         delimiter = GetComponent<BoxCollider2D>();
         delimiter.enabled = false;
-        StartCoroutine(Meteoros());       
+        StartCoroutine(Meteoros());
+        x = 5;
     }
 
     void Update () {
         if (generar) {
             timeMisilLoad += Time.deltaTime;
 
-            int ale = Random.Range(0, 5);
+            int ale = Random.Range(0, 7);
 
-            if (((int)timeMisilLoad % 15 == 0) && (InfoPlayer.getShield() != 2) && (ale == 1)) {
+            if (((int)timeMisilLoad % x == 0) && (InfoPlayer.getShield() != 2) && (ale == 1)) {
                 Instantiate(escudo, new Vector3(21, Random.Range(yRange.x, yRange.y), 0), escudo.transform.rotation);
-                timeMisilLoad = 1f;
+                if (x != 5){
+                    timeMisilLoad = 1f;
+                }
+                x = 15;
             }
 
-            if (((int)timeMisilLoad % 10 == 0) && (InfoPlayer.getMode() == 1)) {
+            if (((int)timeMisilLoad % 11 == 0) && (InfoPlayer.getMode() == 1)) {
                 Instantiate(agujero, new Vector3(21, Random.Range(yRange.x + 3, yRange.y - 3), 0), agujero.transform.rotation);
                 timeMisilLoad += 1f;
             }
