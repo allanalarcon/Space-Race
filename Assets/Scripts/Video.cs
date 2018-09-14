@@ -24,7 +24,7 @@ public class Video : MonoBehaviour {
 		//Debug.Log(timeMisilLoad);
 		
 		if (video.GetComponent<VideoPlayer>().clip.ToString() == "Intro Juego (UnityEngine.VideoClip)"){
-			if (6 < timeMisilLoad){
+			if (15 < timeMisilLoad){
 				if (!video.GetComponent<VideoPlayer>().isPlaying){
 					SceneManager.LoadScene("VideoLevel1A");
 				}
