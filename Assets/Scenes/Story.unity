@@ -11360,7 +11360,7 @@ MonoBehaviour:
   satelite2: {fileID: 1348121677300776, guid: 23fd092953f15da49a86886ac4f91cbd, type: 2}
   panel: {fileID: 66691873}
   escudo: {fileID: 1650656238183912, guid: cadff2e07df8f754485819036b301aaf, type: 2}
-  yRange: {x: -6.8, y: 3.5}
+  yRange: {x: -6.7, y: 3.5}
 --- !u!4 &1225023516
 Transform:
   m_ObjectHideFlags: 0
@@ -11864,7 +11864,7 @@ GameObject:
   - component: {fileID: 1559803754}
   m_Layer: 0
   m_Name: paredDer
-  m_TagString: Untagged
+  m_TagString: Pared
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12341,6 +12341,34 @@ Prefab:
       propertyPath: AnimationHole
       value: 
       objectReference: {fileID: 408595161}
+    - target: {fileID: 60896422591992164, guid: d9972f74fa8865041b94158d11307df5,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4177456864470964, guid: d9972f74fa8865041b94158d11307df5, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1650604309190368, guid: d9972f74fa8865041b94158d11307df5, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 199257375438575200, guid: d9972f74fa8865041b94158d11307df5,
+        type: 2}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 199490960867276678, guid: d9972f74fa8865041b94158d11307df5,
+        type: 2}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 212609954834980306, guid: d9972f74fa8865041b94158d11307df5,
+        type: 2}
+      propertyPath: m_SortingOrder
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d9972f74fa8865041b94158d11307df5, type: 2}
   m_IsPrefabAsset: 0

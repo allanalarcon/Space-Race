@@ -43,7 +43,6 @@ public class ShipMovement : MonoBehaviour {
                               Input.GetAxis("Vertical"));
             timeMisilLoad += Time.deltaTime;
             misilAvailable = misilAvailable || (int)timeMisilLoad % 15 == 0 && InfoPlayer.getMode() != 3;
-
             disparoEspecial = Input.GetKeyDown(KeyCode.Z) && misilAvailable && player.isAlive();
             anim.SetBool("disparando", dispara);
             anim.SetBool("disparoEspecial", disparoEspecial);
@@ -67,7 +66,7 @@ public class ShipMovement : MonoBehaviour {
         rb.MoveRotation(angle * dir);
     }
 
-    private void OnCollisionEnter2D(Collision2D collision) {        
+    private void OnCollisionEnter2D(Collision2D collision) {
         if (collision.collider.CompareTag("Obstaculo")) {
             player.impact();
             anim.SetInteger("lifes", player.getLifes());

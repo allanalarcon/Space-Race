@@ -22,6 +22,11 @@ public class AnimationHole : MonoBehaviour {
         // Escupir nave
         Instantiate(HoleOut);
         GameObject player = GameObject.FindGameObjectWithTag("Player");
+        player.GetComponent<PolygonCollider2D>().isTrigger = false;
+
+        if (player.GetComponent<Player>().getLifes() == 1) {
+            player.GetComponent<ShipMovement>().activarHumo();
+        }
         player.transform.position = new Vector3(-8f, -1.621881f, 0f);
         player.GetComponent<Animator>().Play("shipOut");
         player.GetComponent<ShipMovement>().blockUnblockShoot();

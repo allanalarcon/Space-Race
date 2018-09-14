@@ -6747,7 +6747,7 @@ MonoBehaviour:
   satelite2: {fileID: 1348121677300776, guid: 23fd092953f15da49a86886ac4f91cbd, type: 2}
   panel: {fileID: 66691873}
   escudo: {fileID: 1650656238183912, guid: cadff2e07df8f754485819036b301aaf, type: 2}
-  yRange: {x: -6.8, y: 3.5}
+  yRange: {x: -6.7, y: 3.5}
 --- !u!4 &1225023516
 Transform:
   m_ObjectHideFlags: 0
@@ -11790,7 +11790,7 @@ GameObject:
   - component: {fileID: 1559803754}
   m_Layer: 0
   m_Name: paredDer
-  m_TagString: Untagged
+  m_TagString: Pared
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

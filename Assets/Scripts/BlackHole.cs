@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class BlackHole : MonoBehaviour {
 
-
 	// Use this for initialization
 	void Start () {        
 	}
@@ -16,8 +15,14 @@ public class BlackHole : MonoBehaviour {
     private void OnTriggerEnter2D(Collider2D collision) {
         
         if (collision.CompareTag("Player")) {
+
+            collision.gameObject.GetComponent<PolygonCollider2D>().isTrigger = true;
+            collision.gameObject.transform.position = new Vector3(-10f, 10f, 0f);
+            collision.gameObject.GetComponent<ShipMovement>().desactivarHumo();
+
             GetComponent<CapsuleCollider2D>().enabled = false;
             // Animación de transición
+            collision.gameObject.GetComponent<ShipMovement>().blockUnblockShoot();
             GameObject.Find("GameController").GetComponent<ObstaclesGenerator>().switchGenerator();
 
             //inicia la animacion            
@@ -25,12 +30,12 @@ public class BlackHole : MonoBehaviour {
             //Instantiate(animacion, new Vector3(0, 0, 8), animacion.transform.rotation);
 
             collision.gameObject.GetComponent<Player>().setScore(Random.Range(-15, 15));
-            collision.gameObject.GetComponent<ShipMovement>().blockUnblockShoot();
+            Destroy(gameObject);
 
         } else if (collision.CompareTag("Finish")){
             Destroy(gameObject);
         }
-        else {
+        else if (!collision.CompareTag("Pared")){
             Destroy(collision.gameObject);
         }
     }

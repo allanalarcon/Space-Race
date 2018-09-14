@@ -32,6 +32,16 @@ public class Misil : MonoBehaviour {
         }
     }
 
+    private void OnTriggerEnter2D(Collider2D collision) {
+    	if (!(collision.name == "BlackHoleIn(Clone)")){
+    		if (collision.CompareTag("Obstaculo")){
+    			collision.gameObject.GetComponent<Animator>().SetInteger("impactos", 0);
+    			collision.gameObject.GetComponent<AudioSource>().Play();
+    			Destroyable.kills++;
+    		}
+    	}
+    }
+
     public void finAnimation() {
         Destroy(gameObject);
     }

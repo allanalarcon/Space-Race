@@ -10,6 +10,7 @@ TagManager:
   - Shield
   - Misil
   - Transicion
+  - Pared
   layers:
   - Default
   - TransparentFX
