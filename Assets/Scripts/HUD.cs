@@ -52,37 +52,38 @@ public class HUD : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        vida.SetInteger("lifes", player.getLifes());
-        escudo.SetInteger("ShieldPower", player.getShieldPower());
-        misil.SetBool("disparoEspecial", ship.getMisilAvailable());
+        if (PlayerPrefs.GetInt("onPause") == 0) {
+            vida.SetInteger("lifes", player.getLifes());
+            escudo.SetInteger("ShieldPower", player.getShieldPower());
+            misil.SetBool("disparoEspecial", ship.getMisilAvailable());
 
-        if (Input.GetKeyDown(KeyCode.Space)) {            
-            weapon.value += weapon.value < 1? 0.03f : 0f;
-        } else {
-            weapon.value -= weapon.value > 0 ? 0.001f : 0f;
-        }        
+            if (Input.GetKeyDown(KeyCode.Space)) {
+                weapon.value += weapon.value < 1 ? 0.03f : 0f;
+            } else {
+                weapon.value -= weapon.value > 0 ? 0.001f : 0f;
+            }
 
-        
-        if (InfoPlayer.getMode() == 1) {
-            updateValue(player.getScore());
-        } else {
-            score.text = "" + (int)player.getScore();
-            if (InfoPlayer.getMode() == 2) {
-                if ((int)player.getScore() >= getScoreShoot()) {
-                    best.text = "Best: " + score.text;
-                    saveScoreShoot((int)player.getScore());
-                }
-            } else if (InfoPlayer.getMode() == 3) {
 
-                barraDisparo.SetActive(false);
-                iconoMisil.SetActive(false);
-                if ((int)player.getScore() >= getScoreTime()) {
-                    best.text = "Best: " + score.text;
-                    saveScoreTime((int)player.getScore());
+            if (InfoPlayer.getMode() == 1) {
+                updateValue(player.getScore());
+            } else {
+                score.text = "" + (int)player.getScore();
+                if (InfoPlayer.getMode() == 2) {
+                    if ((int)player.getScore() >= getScoreShoot()) {
+                        best.text = "Best: " + score.text;
+                        saveScoreShoot((int)player.getScore());
+                    }
+                } else if (InfoPlayer.getMode() == 3) {
+
+                    barraDisparo.SetActive(false);
+                    iconoMisil.SetActive(false);
+                    if ((int)player.getScore() >= getScoreTime()) {
+                        best.text = "Best: " + score.text;
+                        saveScoreTime((int)player.getScore());
+                    }
                 }
             }
-        }
-        
+        }                
 	}
 
     public void updateValue(float value) {
@@ -96,10 +97,10 @@ public class HUD : MonoBehaviour {
             player.levelComplete();
             if (getContinue() == 0) {                
                 saveContinue(1);
-                SceneManager.LoadScene("LevelUp");
+                SceneManager.LoadScene("VideoLlegadaPlaneta");
             } else {
                 saveContinue(0);
-                SceneManager.LoadScene("VideoLlegadaPlaneta");
+                SceneManager.LoadScene("VideoLlegadaPlaneta2");
             }
             
         }

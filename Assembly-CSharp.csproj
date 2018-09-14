@@ -61,11 +61,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\AnimationHole.cs" />
     <Compile Include="Assets\Scripts\ArmaScript.cs" />
     <Compile Include="Assets\Scripts\BalaMovement.cs" />
     <Compile Include="Assets\Scripts\BGanimation.cs" />
     <Compile Include="Assets\Scripts\BGScroller.cs" />
     <Compile Include="Assets\Scripts\BlackHole.cs" />
+    <Compile Include="Assets\Scripts\BlackHoleOut.cs" />
     <Compile Include="Assets\Scripts\CamController.cs" />
     <Compile Include="Assets\Scripts\Destroyable.cs" />
     <Compile Include="Assets\Scripts\HUD.cs" />
@@ -82,6 +84,8 @@
     <Compile Include="Assets\Scripts\scoreManager.cs" />
     <Compile Include="Assets\Scripts\ShipMovement.cs" />
     <Compile Include="Assets\Scripts\Token.cs" />
+    <Compile Include="Assets\Scripts\TurnAnimationHole.cs" />
+    <Compile Include="Assets\Scripts\Video.cs" />
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>C:/Users/dario/Documents/DARIO/Universidad/2018 IT/Desarrollo de juegos de video/Proyecto/Space-Race/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>

@@ -32,7 +32,7 @@ public class SceneController : MonoBehaviour {
         }
         else if (escena == "Introduction"){
             saveContinue(0);
-            SceneManager.LoadScene(escena);
+            SceneManager.LoadScene("Introduction");
         }
         else {
             SceneManager.LoadScene(escena);

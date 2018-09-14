@@ -47,4 +47,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/VideoLlegadaPlaneta.unity
     guid: 45a743e4d4c55da47a8866053e49dac1
+  - enabled: 1
+    path: Assets/Scenes/VideoLlegadaPlaneta2.unity
+    guid: 516f27a6dbd797345a6d1c236c6be621
   m_configObjects: {}

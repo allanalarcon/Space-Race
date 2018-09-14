@@ -45,7 +45,10 @@ public class Destroyable : MonoBehaviour {
         }
         
         if (destruir) {            
-            sound.Play();
+            if (sound.enabled) {
+                sound.Play();
+            }
+            
             kills++;
             //yield return new WaitForSeconds(timeForDisable);
 

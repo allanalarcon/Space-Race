@@ -31,11 +31,13 @@ public class ObstaclesGenerator : MonoBehaviour {
     [SerializeField]
     private Vector2 yRange;
     private bool generar = true;
-
+    private BoxCollider2D delimiter;
 
     void Start() {
         Time.timeScale = 1;
-        StartCoroutine(Meteoros());
+        delimiter = GetComponent<BoxCollider2D>();
+        delimiter.enabled = false;
+        StartCoroutine(Meteoros());       
     }
 
     void Update () {
@@ -64,17 +66,20 @@ public class ObstaclesGenerator : MonoBehaviour {
         if(Time.timeScale == 1){    //si la velocidad es 1
             Time.timeScale = 0;    //que la velocidad del juego sea 0
             panel.SetActive(true);
+            PlayerPrefs.SetInt("onPause", 1);
         } else if(Time.timeScale == 0) {   // si la velocidad es 0
             panel.SetActive(false);
             Time.timeScale = 1;    // que la velocidad del juego regrese a 1
+            PlayerPrefs.SetInt("onPause", 0);
         }
     }
 
     IEnumerator Meteoros() {
         GameObject[] obstaculos = { roca, roca, robot, meteoro, meteoro, satelite2, meteoro, meteoro, roca, meteoro, satelite1, roca, meteoro, roca, roca, meteoro};
-        int size = obstaculos.Length;
-        while (generar) {
+        int size = obstaculos.Length;                
 
+        while (true) {
+            
             for (int i = 0; i < instanceAmount; i++) {
                 yield return new WaitForSeconds(instanceDelay);
                 GameObject ob = obstaculos[Random.Range(0, size)];
@@ -82,8 +87,9 @@ public class ObstaclesGenerator : MonoBehaviour {
             }
 
             yield return new WaitForSeconds(instanceRate);
-
+            
         }
+        
     }
 
     public int getScoreTime(){
@@ -103,6 +109,14 @@ public class ObstaclesGenerator : MonoBehaviour {
     }
 
     public void switchGenerator() {
-        generar = !generar;
+        delimiter.enabled = generar;
+        generar = !generar;        
     }
+
+    private void OnTriggerStay2D(Collider2D collision) {
+        if (collision.CompareTag("Obstaculo")) {
+            Destroy(collision.gameObject);
+        }
+    }
+
 }

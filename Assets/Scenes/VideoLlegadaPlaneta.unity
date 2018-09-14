@@ -142,7 +142,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e1f3cf098f4e2f439f757c822f4ddc7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneToLoad: Story2
+  sceneToLoad: LevelUp
   percentText: {fileID: 787725418}
   progressImage: {fileID: 2083657682}
 --- !u!114 &150797042
@@ -1202,7 +1202,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: End
+          m_StringArgument: LevelUp
           m_BoolArgument: 1
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
@@ -1365,7 +1365,7 @@ VideoPlayer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1953877284}
   m_Enabled: 1
-  m_VideoClip: {fileID: 32900000, guid: ad5da174d75170c4ba388061e6b9e761, type: 3}
+  m_VideoClip: {fileID: 32900000, guid: b70531da0b8b49345a02df679ed8e759, type: 3}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 2116450929}

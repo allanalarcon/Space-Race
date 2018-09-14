@@ -20,11 +20,11 @@ public class Video : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		timeMisilLoad += Time.deltaTime;
-		Debug.Log(video.GetComponent<VideoPlayer>().clip.ToString());
-		Debug.Log(timeMisilLoad);
+		//Debug.Log(video.GetComponent<VideoPlayer>().clip.ToString());
+		//Debug.Log(timeMisilLoad);
 		
 		if (video.GetComponent<VideoPlayer>().clip.ToString() == "Intro Juego (UnityEngine.VideoClip)"){
-			if (2 < timeMisilLoad){
+			if (6 < timeMisilLoad){
 				if (!video.GetComponent<VideoPlayer>().isPlaying){
 					SceneManager.LoadScene("VideoLevel1A");
 				}
@@ -32,7 +32,24 @@ public class Video : MonoBehaviour {
 		}
 
 		else if (video.GetComponent<VideoPlayer>().clip.ToString() == "Nivel 1 Video (UnityEngine.VideoClip)"){
-			if (2 < timeMisilLoad){
+			if (6 < timeMisilLoad){
+				if (!video.GetComponent<VideoPlayer>().isPlaying){
+					InfoPlayer.setMode(1);
+					loadingpanel.SetActive(true);
+				}
+			}
+		} 
+        
+        else if (video.GetComponent<VideoPlayer>().clip.ToString() == "Nivel 1 Video Aterrizaje (UnityEngine.VideoClip)") {
+            if (6 < timeMisilLoad) {
+                if (!video.GetComponent<VideoPlayer>().isPlaying) {
+                    SceneManager.LoadScene("LevelUp");
+                }
+            }
+        }
+        
+        else if (video.GetComponent<VideoPlayer>().clip.ToString() == "Nivel 2 Video (UnityEngine.VideoClip)"){
+			if (6 < timeMisilLoad){
 				if (!video.GetComponent<VideoPlayer>().isPlaying){
 					InfoPlayer.setMode(1);
 					loadingpanel.SetActive(true);
@@ -40,17 +57,8 @@ public class Video : MonoBehaviour {
 			}
 		}
 
-		else if (video.GetComponent<VideoPlayer>().clip.ToString() == "Nivel 2 Video (UnityEngine.VideoClip)"){
-			if (2 < timeMisilLoad){
-				if (!video.GetComponent<VideoPlayer>().isPlaying){
-					InfoPlayer.setMode(1);
-					loadingpanel.SetActive(true);
-				}
-			}
-		}
-
-		else if (video.GetComponent<VideoPlayer>().clip.ToString() == "newplanet (UnityEngine.VideoClip)"){
-			if (2 < timeMisilLoad){
+		else if (video.GetComponent<VideoPlayer>().clip.ToString() == "Nivel 2 Video Aterrizaje (UnityEngine.VideoClip)"){
+			if (6 < timeMisilLoad){
 				if (!video.GetComponent<VideoPlayer>().isPlaying){
 					SceneManager.LoadScene("End");
 				}

@@ -20,12 +20,12 @@ GameObject:
   m_Component:
   - component: {fileID: 4856021759644388}
   - component: {fileID: 212511218218238786}
-  - component: {fileID: 95441980771335780}
   - component: {fileID: 114065929070837326}
   - component: {fileID: 114206256996421752}
   - component: {fileID: 50257596599237974}
   - component: {fileID: 70978059123839626}
   - component: {fileID: 82247817507288758}
+  - component: {fileID: 95880181500547880}
   m_Layer: 0
   m_Name: BlackHoleIn
   m_TagString: Obstaculo
@@ -40,7 +40,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1174594911951590}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.53, y: 0.75, z: 0}
+  m_LocalPosition: {x: -1.0793045, y: -0.92890435, z: 0}
   m_LocalScale: {x: 0.41935, y: 0.41935, z: 0.41935}
   m_Children: []
   m_Father: {fileID: 0}
@@ -78,8 +78,8 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.064163506, y: 0.12834975}
-  m_Size: {x: 5.8134027, y: 11.589025}
+  m_Offset: {x: 0.3082931, y: -0.116629235}
+  m_Size: {x: 2.1813102, y: 10.265706}
   m_Direction: 0
 --- !u!82 &82247817507288758
 AudioSource:
@@ -176,7 +176,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!95 &95441980771335780
+--- !u!95 &95880181500547880
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 1
@@ -185,7 +185,7 @@ Animator:
   m_GameObject: {fileID: 1174594911951590}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: f3a2272caee2e55449db35c2a8e78b6e, type: 2}
+  m_Controller: {fileID: 9100000, guid: f4d7507058b1eef45bb35fc632dc43f4, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -205,7 +205,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20aefc0e88b55304e818b59df009ff4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animacion: {fileID: 1259687145444442, guid: 152e65810065c8340aaaf74229752d0c, type: 2}
 --- !u!114 &114206256996421752
 MonoBehaviour:
   m_ObjectHideFlags: 1

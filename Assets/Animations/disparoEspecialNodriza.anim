@@ -20,15 +20,15 @@ AnimationClip:
   - curve:
     - time: 0
       value: {fileID: 21300000, guid: 5d6940f3d5108dd4dbd122a32533f322, type: 3}
-    - time: 0.15
+    - time: 0.13333334
       value: {fileID: 21300000, guid: cf4836375f4822f47b928b5811aee3cf, type: 3}
-    - time: 0.3
+    - time: 0.26666668
       value: {fileID: 21300000, guid: 737b6ab07bdc65b4587b86a8b4064150, type: 3}
-    - time: 0.45
+    - time: 0.41666666
       value: {fileID: 21300000, guid: c879a7b8d38858046a8c7015283c9871, type: 3}
-    - time: 0.6
+    - time: 0.55
       value: {fileID: 21300000, guid: 79a1228a8f7d86b45a5d17e75d297491, type: 3}
-    - time: 0.75
+    - time: 0.68333334
       value: {fileID: 21300000, guid: 081bf9ad79a3be546af39b93277c2d83, type: 3}
     attribute: m_Sprite
     path: 
@@ -60,7 +60,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.76666665
+    m_StopTime: 0.7
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -81,7 +81,7 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_GenerateMotionCurves: 0
   m_Events:
-  - time: 0.6666667
+  - time: 0.5833333
     functionName: dispararMisil
     data: 
     objectReferenceParameter: {fileID: 0}

@@ -20,7 +20,8 @@ public class ShipMovement : MonoBehaviour {
     public Slider weapon;
     private bool misilAvailable = false;
     private float timeMisilLoad = 1f;    
-    private AudioSource impactSound;    
+    private AudioSource impactSound;
+    private bool canShoot = true;
 
     void Start () {
 		rb = GetComponent<Rigidbody2D>();
@@ -28,31 +29,35 @@ public class ShipMovement : MonoBehaviour {
         player = GetComponent<Player>();        
         impactSound = transform.GetChild(2).GetComponent<AudioSource>();
         animState = transform.GetChild(2).GetComponent<Animator>();
+        PlayerPrefs.SetInt("onPause", 0);
 	}
 	
 	// Update is called once per frame
 	void Update () {        
-        bool bup = Input.GetKey(KeyCode.UpArrow);
-        bool bdown = Input.GetKey(KeyCode.DownArrow);
-        bool dispara = Input.GetKeyDown(KeyCode.Space) && InfoPlayer.getMode()!=3 && weapon.value < 0.95f && player.isAlive();
-        bool disparoEspecial;
-        Mov = new Vector2(Input.GetAxis("Horizontal"),
-                          Input.GetAxis("Vertical"));
-        timeMisilLoad += Time.deltaTime;
-        misilAvailable = misilAvailable || (int)timeMisilLoad % 15 == 0 && InfoPlayer.getMode()!=3;        
+        if (PlayerPrefs.GetInt("onPause") == 0 && canShoot) {
+            bool bup = Input.GetKey(KeyCode.UpArrow);
+            bool bdown = Input.GetKey(KeyCode.DownArrow);
+            bool dispara = Input.GetKeyDown(KeyCode.Space) && InfoPlayer.getMode() != 3 && weapon.value < 0.95f && player.isAlive();
+            bool disparoEspecial;
+            Mov = new Vector2(Input.GetAxis("Horizontal"),
+                              Input.GetAxis("Vertical"));
+            timeMisilLoad += Time.deltaTime;
+            misilAvailable = misilAvailable || (int)timeMisilLoad % 15 == 0 && InfoPlayer.getMode() != 3;
 
-        disparoEspecial = Input.GetKeyDown(KeyCode.Z) && misilAvailable && player.isAlive();
-        anim.SetBool("disparando", dispara);
-        anim.SetBool("disparoEspecial", disparoEspecial);
-        
+            disparoEspecial = Input.GetKeyDown(KeyCode.Z) && misilAvailable && player.isAlive();
+            anim.SetBool("disparando", dispara);
+            anim.SetBool("disparoEspecial", disparoEspecial);
 
-        if (bup) {
-            dir = 1;
-        } else if (bdown) {
-            dir = -1;
-        } else {
-            dir = 0;
+
+            if (bup) {
+                dir = 1;
+            } else if (bdown) {
+                dir = -1;
+            } else {
+                dir = 0;
+            }
         }
+        
 	}
 
     void FixedUpdate() {
@@ -68,7 +73,7 @@ public class ShipMovement : MonoBehaviour {
             anim.SetInteger("lifes", player.getLifes());
             if (player.getLifes() == 1) {
                 activarHumo();
-                rb.gravityScale = 13f;
+                rb.gravityScale = 5f;
             }
             
             if (!player.isAlive()){
@@ -110,12 +115,19 @@ public class ShipMovement : MonoBehaviour {
         return misilAvailable;
     }
 
-    private void dispararMisil() {
-        Debug.Log("Disparando misil");
+    private void dispararMisil() {        
         GameObject bazuca = transform.GetChild(5).gameObject;
         Instantiate(misil, bazuca.transform.position, misil.transform.rotation, bazuca.transform);
         bazuca.GetComponent<AudioSource>().Play();
         timeMisilLoad = 1f;
-        //misilAvailable = false;
+        misilAvailable = false;
+    }
+
+    public void blockUnblockShoot() {
+        canShoot = !canShoot;
+    }
+
+    public bool IcanShoot() {
+        return canShoot;
     }
 }
