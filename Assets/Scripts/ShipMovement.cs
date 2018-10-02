@@ -72,7 +72,7 @@ public class ShipMovement : MonoBehaviour {
             anim.SetInteger("lifes", player.getLifes());
             if (player.getLifes() == 1) {
                 activarHumo();
-                rb.gravityScale = 5f;
+                rb.gravityScale = 2f;
             }
             
             if (!player.isAlive()){
